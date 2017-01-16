@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.mytestdemo"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.FORCE_STOP_PACKAGES" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:name="com.example.mytestdemo.MyTestApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:sharedUserId="android.uid.system"
+        android:theme="@style/myHoloLightBlueActionBar" >
+
+        <!-- 喜马拉雅SDK接入 -->
+        <meta-data
+            android:name="app_key"
+            android:value="b617866c20482d133d5de66fceb37da3" />
+        <meta-data
+            android:name="pack_id"
+            android:value="com.app.test.android" />
+
+        <activity
+            android:name="com.example.mytestdemo.main.MainTestActivity"
+            android:configChanges="screenSize|keyboardHidden|orientation|fontScale|locale|navigation"
+            android:label="@string/app_name"
+            android:theme="@style/myHoloLightBlueActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name="com.example.mytestdemo.txz.TXZNaviSettingReceiver" >
+            <intent-filter>
+                <action android:name="cn.ritu.rtnavi.select_map_action" />
+                <action android:name="com.android.action.DDT_VOICHELPER" />
+                <action android:name="com.txznet.txz.record.show" />
+                <action android:name="com.txznet.txz.record.dismiss" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.ACTION_SHUTDOWN" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.example.mytestdemo.txz.SyncBlueToothReceiver" >
+            <intent-filter>
+                <action android:name="txz_sync_btcontacts_action" />
+                <action android:name="bluetooth_disconnected_info_action" />
+                <action android:name="bluetooth_connect_address_action" />
+                <action android:name="bluetooth_disconnect_action" />
+            </intent-filter>
+        </receiver>
+        
+        <receiver android:name="com.example.mytestdemo.fragment.FragmentChangeReceiver" >
+            <intent-filter>
+                <action android:name="change_to_fragment_one_action" />               
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.txznet.sdk.TXZService"
+            android:exported="true" >
+            <intent-filter>
+
+                <!-- {项目包名}.service.TXZService -->
+                <action android:name="com.example.mytestdemo.service.TXZService" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name="com.example.mytestdemo.activity.ContentProviderActivity"
+            android:label="@string/title_activity_content_provider"
+            android:theme="@style/myHoloLightBlueActionBar" >
+        </activity>
+        <activity
+            android:name="com.example.mytestdemo.activity.SPUtilActivity"
+            android:label="@string/title_activity_sputil"
+            android:theme="@style/myHoloLightBlueActionBar" >
+        </activity>
+        <activity
+            android:name="com.example.mytestdemo.activity.DBUtilActivity"
+            android:label="@string/title_activity_dbutil"
+            android:theme="@style/myHoloLightBlueActionBar" >
+        </activity>
+        <activity
+            android:name="com.example.mytestdemo.carlife.VideoActivity"
+            android:label="@string/title_activity_video" >
+        </activity>
+        <activity
+            android:name="com.example.mytestdemo.music.MyMusicActivity"
+            android:label="@string/title_activity_music" >
+        </activity>
+
+        <service android:name="com.example.mytestdemo.music.MusicService" >
+        </service>
+        <service
+            android:name="com.ximalaya.ting.android.opensdk.player.service.XmPlayerService"
+            android:exported="true"
+            android:process=":player" >
+        </service>
+        <service android:name="com.example.mytestdemo.service.ServiceDemo" >
+        </service>
+
+        <activity
+            android:name="com.example.mytestdemo.service.MyServiceActivity"
+            android:label="@string/title_activity_my_service" >
+        </activity>
+        <activity
+            android:name="com.example.mytestdemo.activity.RandomIdsActivity"
+            android:label="@string/title_activity_random_ids" >
+        </activity>
+        <activity
+            android:name="com.example.mytestdemo.activity.FileTestActivity"
+            android:label="@string/title_activity_file_test" >
+        </activity>
+        <activity
+            android:name="com.example.mytestdemo.fragment.FragmentTestActivity"
+            android:label="@string/title_activity_fragment" >
+        </activity>
+    </application>
+
+</manifest>

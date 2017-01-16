@@ -1,0 +1,12 @@
+<resources>
+<!-- 
+    <string name="txz_sdk_init_app_id">0x7f040000</string>
+    <string name="txz_sdk_init_app_token">0x7f040001</string>
+-->
+    <string name="txz_sdk_init_app_id">8380a57ffc4e17607ed781c6cbaf287f</string>
+    <string name="txz_sdk_init_app_token">4fb6f83c3da2963c2fb98f89679ca80a19a7d570</string>
+    <string-array name="txz_sdk_init_wakeup_keywords">
+        <item>你好小道</item>
+    </string-array>
+
+</resources>

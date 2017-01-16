@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="maps">
+        <item>道道通导航</item>
+        <item>百度导航</item>
+        <item>高德导航</item>
+        <item>百度地图</item>
+        <item>百度导航HD</item>
+        <item>高德地图</item>
+        <item>高德地图CAR</item>
+    </string-array>
+</resources>

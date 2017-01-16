@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">我的测试</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_second">SecondActivity</string>
+    <string name="title_activity_content_provider">ContentProviderActivity</string>
+    <string name="title_activity_sputil">SPUtilActivity</string>
+    <string name="title_activity_dbutil">DBUtilActivity</string>
+    <string name="title_activity_video">VideoActivity</string>
+    <string name="title_activity_music">MusicActivity</string>
+    <string name="btnPlayorPause">Play</string>
+    <string name="btnStop">Stop</string>
+    <string name="btnQuit">Quit</string>
+    <string name="btnPre">Preview</string>
+    <string name="btnNext">Next</string>
+    <string name="playing">Playing</string>
+    <string name="pause">Pause</string>
+    <string name="action_settings">Setting</string>
+    <string name="action_sort">Sort</string>
+    <string name="action_filter">Filter</string>
+    <string name="title_activity_my_service">MyServiceActivity</string>
+    <string name="title_activity_random_ids">RandomIdsActivity</string>
+    <string name="title_activity_file_test">FileTestActivity</string>
+    <string name="title_activity_fragment">FragmentTestActivity</string>
+
+</resources>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/btnTXZStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="打开同行者语音" />
+
+        <Button
+            android:id="@+id/btnTXZClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="关闭同行者语音" />
+
+        <Button
+            android:id="@+id/btnTXZSleep"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="休眠同行者语音" />
+
+        <Button
+            android:id="@+id/btnTXZReStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="重启同行者语音" />
+
+        <Button
+            android:id="@+id/btnTXZSystemControl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="系统控制同行者语音助手" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:padding="10dp"
+                android:text="选择导航工具" />
+
+            <Spinner
+                android:id="@+id/spinnerMap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:entries="@array/maps"
+                android:padding="10dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/buttonTest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Test" />
+
+            <Button
+                android:id="@+id/btn_sp_util"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SPUtil" />
+
+            <Button
+                android:id="@+id/btn_db_util"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DBUtil" />
+
+            <Button
+                android:id="@+id/btn_video_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Video" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btn_music_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Music" />
+
+            <Button
+                android:id="@+id/btn_service_demo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Service" />
+
+            <Button
+                android:id="@+id/btn_bt_contact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BtCon" />
+
+            <Button
+                android:id="@+id/btn_test_fragment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Frag" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btn_random_ids"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RanIds" />
+
+            <Button
+                android:id="@+id/btn_file_test"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="File" />
+
+            <Button
+                android:id="@+id/btn_frag_broadcast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FragBD" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

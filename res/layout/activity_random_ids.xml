@@ -1,0 +1,113 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="random ids test" />
+
+    <EditText
+        android:id="@+id/editText_random_ids_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView1"
+        android:ems="10"
+        android:hint="请输入生成随机ID位数"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/editText_random_ids_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/editText_random_ids_1"
+        android:ems="10"
+        android:hint="请输入生成随机ID个数"
+        android:inputType="number" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/editText_random_ids_2"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btn_random_ids"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="定制生成" />
+
+        <Button
+            android:id="@+id/btn_random_ids_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="生成1个" />
+
+        <Button
+            android:id="@+id/btn_random_ids_10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="生成10个" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/linearLayout1"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btn_random_ids_number_10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="生成10个纯数字ID号" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/linearLayout2"
+        android:layout_margin="5dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="序号" />
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="随机ID号" />
+
+        <Button
+            android:id="@+id/btn_clear_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="清除所有数据"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/random_ids_listView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/linearLayout3" >
+    </ListView>
+
+</RelativeLayout>
