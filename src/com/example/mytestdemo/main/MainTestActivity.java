@@ -21,6 +21,7 @@ import cn.ritu.bluephone.bean.BtContact;
 
 import com.example.mytestdemo.MyTestApplication;
 import com.example.mytestdemo.R;
+import com.example.mytestdemo.WindowParamsActivity;
 import com.example.mytestdemo.activity.AndroidFileSystemTest;
 import com.example.mytestdemo.activity.ContentProviderActivity;
 import com.example.mytestdemo.activity.DBUtilActivity;
@@ -75,6 +76,7 @@ public class MainTestActivity extends BaseActivity implements OnClickListener{
 	private Button fileTest;
 	private Button btnBroadCast;
 	private Button aFileSystem;
+	private Button btnWinParams;
 	
 	private Spinner spinnerMap;
 
@@ -162,6 +164,7 @@ public class MainTestActivity extends BaseActivity implements OnClickListener{
 		fileTest = (Button) findViewById(R.id.btn_file_test);
 		btnBroadCast = (Button) findViewById(R.id.btn_frag_broadcast);
 		aFileSystem = (Button) findViewById(R.id.btn_afile_system);
+		btnWinParams = (Button) findViewById(R.id.btn_window_params);
 		
 		progressBar = (ProgressBar) findViewById(R.id.progressBar);
 		spinnerMap = (Spinner) findViewById(R.id.spinnerMap);
@@ -177,6 +180,7 @@ public class MainTestActivity extends BaseActivity implements OnClickListener{
 		fileTest.setOnClickListener(this);
 		btnBroadCast.setOnClickListener(this);
 		aFileSystem.setOnClickListener(this);
+		btnWinParams.setOnClickListener(this);
 
 		spinnerMap.setSelection(getSelectedMap());
 //		NaviToolInterface.getInstance().setMaps(getSelectedMap());
@@ -451,6 +455,10 @@ public class MainTestActivity extends BaseActivity implements OnClickListener{
             
 		case R.id.btn_afile_system:
 		    startActivity(new Intent(MainTestActivity.this,AndroidFileSystemTest.class));
+            break;
+            
+		case R.id.btn_window_params:
+            startActivity(new Intent(MainTestActivity.this,WindowParamsActivity.class));
             break;
             
         default:

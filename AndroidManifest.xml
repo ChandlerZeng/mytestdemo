@@ -75,10 +75,9 @@
                 <action android:name="bluetooth_disconnect_action" />
             </intent-filter>
         </receiver>
-        
         <receiver android:name="com.example.mytestdemo.fragment.FragmentChangeReceiver" >
             <intent-filter>
-                <action android:name="change_to_fragment_one_action" />               
+                <action android:name="change_to_fragment_one_action" />
             </intent-filter>
         </receiver>
 
@@ -146,9 +145,14 @@
         </activity>
         <activity
             android:name="com.example.mytestdemo.activity.AndroidFileSystemTest"
-            android:screenOrientation="landscape"
             android:configChanges="orientation"
-            android:label="@string/title_activity_file_system" >
+            android:label="@string/title_activity_file_system"
+            android:theme="@android:style/Theme.NoTitleBar" 
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name="com.example.mytestdemo.WindowParamsActivity"
+            android:label="@string/title_activity_window_params">
         </activity>
     </application>
 

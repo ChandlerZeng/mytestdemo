@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/bt_phone_inner_margin"
+    android:layout_weight="1"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3.5"
+        android:gravity="bottom|center_horizontal" >
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/people" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/telephone_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@null"
+            android:textColor="@color/white"
+            android:textSize="@dimen/bt_calling_name_size" />
+
+        <TextView
+            android:id="@+id/telephone_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@null"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dial_num_size2" />
+
+        <TextView
+            android:id="@+id/calling_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/main_padding_left_right"
+            android:text="@null"
+            android:textColor="@color/white"
+            android:textSize="@dimen/bt_calling_time" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:id="@+id/car_audio"
+                android:layout_width="@dimen/button_length"
+                android:layout_height="40dp"
+                android:background="@drawable/buttom_blue"
+                android:gravity="center" >
+
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/car_audio" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/car_audio"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/normal_word_size2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/phone_audio"
+                android:layout_width="@dimen/button_length"
+                android:layout_height="40dp"
+                android:background="@drawable/buttom_dark_blue"
+                android:gravity="center" >
+
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/phone_audio" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/phone_audio"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/normal_word_size2" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_horizontal" >
+
+            <ImageButton
+                android:id="@+id/dial_btn"
+                android:layout_width="@dimen/button_length"
+                android:layout_height="40dp"
+                android:background="@drawable/buttom_green"
+                android:src="@drawable/answer_phone"
+                android:text="@string/car_audio"
+                android:textColor="@color/white"
+                android:textSize="@dimen/normal_word_size2" />
+
+            <ImageButton
+                android:id="@+id/terminate_btn"
+                android:layout_width="@dimen/button_length"
+                android:layout_height="40dp"
+                android:background="@drawable/buttom_red"
+                android:src="@drawable/terminate_phone"
+                android:text="@string/car_audio"
+                android:textColor="@color/white"
+                android:textSize="@dimen/normal_word_size2" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

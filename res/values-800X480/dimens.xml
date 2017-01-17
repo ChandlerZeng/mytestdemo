@@ -29,8 +29,8 @@
     <dimen name="pair_list_item_height">65dp</dimen>
     <dimen name="word_height">40dp</dimen>
     
-  	<dimen name="normal_word_size">34sp</dimen>
-  	<dimen name="normal_word_size2">27sp</dimen>
+  	<dimen name="normal_word_size">20sp</dimen>
+  	<dimen name="normal_word_size2">18sp</dimen>
   	<dimen name="dial_num_size">34sp</dimen>
   	<dimen name="dial_num_size2">25sp</dimen>
   	<dimen name="bt_setting_size">23sp</dimen>
