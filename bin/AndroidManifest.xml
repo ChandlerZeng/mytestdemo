@@ -144,6 +144,12 @@
             android:name="com.example.mytestdemo.fragment.FragmentTestActivity"
             android:label="@string/title_activity_fragment" >
         </activity>
+        <activity
+            android:name="com.example.mytestdemo.activity.AndroidFileSystemTest"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation"
+            android:label="@string/title_activity_file_system" >
+        </activity>
     </application>
 
 </manifest>

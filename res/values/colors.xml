@@ -5,4 +5,10 @@
     <color name="blue">#0785d9</color>
     <color name="semi_transparent">#e0000000</color>
     <color name="black">#000000</color>
+    
+    <color name="left_button_select">#1b1b1b</color>
+    <color name="left_button_unselect">#303030</color>
+    <color name="keyboard_line">#404245</color>
+     <!-- 电话按钮面板颜色 -->
+    <color name="greyblack">#012c2f32</color>
 </resources>

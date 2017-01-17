@@ -2,9 +2,6 @@
 bin
 gen
 
-#Java dex
-*.class
-
 #Mac
 .DS_Store
 

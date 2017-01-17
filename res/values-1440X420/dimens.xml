@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="main_bottom_height">50dp</dimen>
+    <dimen name="main_padding_left_right">8dp</dimen>
+    <dimen name="main_padding_top_bottom">20dp</dimen>
+    <dimen name="main_padding_bottom">15dp</dimen>
+    
+    
+    <dimen name="bt_phone_margin">10dp</dimen>
+    <dimen name="bt_phone_inner_margin">6dp</dimen>
+    <dimen name="bt_phone_dail_num_left_padding">15dp</dimen>
+    <dimen name="bt_call_record_item_height">65dp</dimen>
+    
+    <dimen name="bt_music_left_margin_top_bottom">25dp</dimen>
+    <dimen name="bt_music_left_margin_bottom">40dp</dimen>
+    <dimen name="bt_music_left_margin_bottom2">30dp</dimen>
+    <dimen name="bt_music_progress_height">7dp</dimen>
+    <dimen name="bt_music_left_right_padding">40dp</dimen>
+    
+    <dimen name="pair_list_left_padding">10dp</dimen>
+    
+    <dimen name="bt_settings_item_height">60dp</dimen>
+    <dimen name="bt_settings_top_left_margin">25dp</dimen>
+    <dimen name="bt_settings_left_right_margin">40dp</dimen>
+    <dimen name="bt_settings">27dp</dimen>
+    <dimen name="bt_settings_item_margin">10dp</dimen>
+    
+    <dimen name="bt_calling_record_item_height">78dp</dimen>
+    <dimen name="pair_list_item_height">65dp</dimen>
+    <dimen name="word_height">40dp</dimen>
+    
+  	<dimen name="normal_word_size">34sp</dimen>
+  	<dimen name="normal_word_size2">27sp</dimen>
+  	<dimen name="dial_num_size">34sp</dimen>
+  	<dimen name="dial_num_size2">25sp</dimen>
+  	<dimen name="bt_setting_size">23sp</dimen>
+  	<dimen name="bt_calling_name_size">15sp</dimen>
+  	<dimen name="music_time_word_size">12sp</dimen>
+  	<dimen name="bt_calling_time">20sp</dimen>
+  	
+  	<dimen name="normal_word_size3">30sp</dimen>
+  	<dimen name="normal_word_size4">38sp</dimen>
+  	<dimen name="music_info_text">25sp</dimen>
+  	<dimen name="music_play_size">49dp</dimen>
+  	<dimen name="music_play_next">37dp</dimen>
+  	
+  	<dimen name="button_length">200dp</dimen>
+</resources>

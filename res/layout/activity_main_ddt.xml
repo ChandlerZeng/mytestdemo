@@ -148,6 +148,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="FragBD" />
+
+            <Button
+                android:id="@+id/btn_afile_system"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="AFS" />
+
         </LinearLayout>
     </LinearLayout>
 

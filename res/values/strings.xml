@@ -23,5 +23,27 @@
     <string name="title_activity_random_ids">RandomIdsActivity</string>
     <string name="title_activity_file_test">FileTestActivity</string>
     <string name="title_activity_fragment">FragmentTestActivity</string>
+    <string name="title_activity_file_system">AndroidFileSystemTest</string>
+    
+    <string name="dial_interface">拨号界面</string>
+    <string name="call_record">通话记录</string>
+    <string name="contacts">通讯录</string>
+    
+    <string name="dial_num_0">0</string>
+    <string name="dial_num_1">1</string>
+    <string name="dial_num_2">2</string>
+    <string name="dial_num_3">3</string>
+    <string name="dial_num_4">4</string>
+    <string name="dial_num_5">5</string>
+    <string name="dial_num_6">6</string>
+    <string name="dial_num_7">7</string>
+    <string name="dial_num_8">8</string>
+    <string name="dial_num_9">9</string>
+    <string name="dial_num_10">*</string>
+    <string name="dial_num_11">#</string>
+    
+    <string name="car_audio">车载音频</string>
+    <string name="phone_audio">手机音频</string>
+    <string name="recent_call">最近通话</string>
 
 </resources>
