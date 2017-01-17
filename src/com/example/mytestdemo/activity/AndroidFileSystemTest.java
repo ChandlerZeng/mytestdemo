@@ -28,7 +28,8 @@ public class AndroidFileSystemTest extends BaseActivity{
         setContentView(R.layout.fragment_bt_phone);  
     /*  
      * 1.创建并返回一个目录，在这个目录下存储应用程序的数据文件  
-     * 输出结果为： getFilesDir():/data/data/com.ghg.IO/files  
+     * 输出结果为： getFilesDir():/data/data/com.ghg.IO/files 
+     *  
      */  
        File dir= getFilesDir();  
        System.out.println("getFilesDir():"+dir.toString());  
