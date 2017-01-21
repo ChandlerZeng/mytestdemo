@@ -21,8 +21,16 @@ import android.util.Log;
 
 public class DbOpenHelper extends SQLiteOpenHelper {
 
-	private static final int DATABASE_VERSION = 3;
+	private static final int DATABASE_VERSION = 5;
 	private static DbOpenHelper instance;
+	
+	private static final String CALL_RECORD_TABLE_CREATE = "CREATE TABLE "
+            + UserDao.CALL_RECORD_TABLE_NAME + " (" +UserDao.COLUMN_NAME_CALL_RECORD_ID
+            + " INTEGER PRIMARY KEY AUTOINCREMENT,"+UserDao.COLUMN_NAME_CALL_RECORD_NAME+ " TEXT,"
+            + UserDao.COLUMN_NAME_CALL_RECORD_NUMBER + " TEXT,"
+            + UserDao.COLUMN_NAME_CALL_RECORD_DATE + " TEXT,"
+            + UserDao.COLUMN_NAME_CALL_RECORD_TYPE + " TEXT,"
+            + UserDao.COLUMN_NAME_CALL_RECORD_DURATION +" TEXT);";
 	
     private static final String RANDOM_IDS_TABLE_CREATE = "CREATE TABLE "
             + UserDao.Random_IDS_TABLE_NAME + " (" +UserDao.COLUMN_NAME_RANDOM_IDS
@@ -89,6 +97,10 @@ public class DbOpenHelper extends SQLiteOpenHelper {
         if (oldVersion < 3) {
             db.execSQL("drop table if exists "+UserDao.Random_IDS_TABLE_NAME);
             db.execSQL(RANDOM_IDS_TABLE_CREATE);
+        }
+        if (oldVersion < 5) {
+            db.execSQL("drop table if exists "+UserDao.CALL_RECORD_TABLE_NAME);
+            db.execSQL(CALL_RECORD_TABLE_CREATE);
         }
 	    
 	    /*if (oldVersion < 2) {

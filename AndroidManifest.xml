@@ -141,18 +141,17 @@
         </activity>
         <activity
             android:name="com.example.mytestdemo.fragment.FragmentTestActivity"
-            android:label="@string/title_activity_fragment" >
+            android:configChanges="orientation"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
         </activity>
         <activity
             android:name="com.example.mytestdemo.activity.AndroidFileSystemTest"
-            android:configChanges="orientation"
-            android:label="@string/title_activity_file_system"
-            android:theme="@android:style/Theme.NoTitleBar" 
-            android:screenOrientation="landscape" >
+            android:label="@string/title_activity_file_system" >
         </activity>
         <activity
             android:name="com.example.mytestdemo.WindowParamsActivity"
-            android:label="@string/title_activity_window_params">
+            android:label="@string/title_activity_window_params" >
         </activity>
     </application>
 

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="#1b1e21" >
+    
+	<View 
+	    android:layout_width="0dp"
+	    android:layout_height="match_parent"
+	    android:layout_weight="1"/>
+	
+	<LinearLayout 
+	    android:layout_width="0dp"
+	    android:layout_height="match_parent"
+	    android:layout_weight="8"
+	    android:orientation="vertical">
+	    
+	    <LinearLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="@dimen/bt_call_record_item_height"
+	        android:orientation="horizontal">
+	        
+	        <FrameLayout 
+	            android:layout_width="0dp"
+	            android:layout_height="match_parent"
+	            android:layout_weight="1">
+	            
+	            <EditText 
+	                android:id="@+id/search_edittext"
+		            android:layout_width="match_parent"
+		            android:layout_height="match_parent"
+		            android:layout_marginLeft="30dp"
+		            android:layout_marginRight="30dp"
+		            android:layout_marginTop="7dp"
+		            android:layout_marginBottom="7dp"
+		            android:background="@drawable/round_edittext"
+		            android:gravity="center"
+		            android:textColor="@color/white"
+		            android:textSize="@dimen/normal_word_size"/>
+	            
+	            <LinearLayout 
+	                android:id="@+id/search_layout"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_gravity="center"
+	                android:orientation="horizontal">
+	                
+	                <ImageView 
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="match_parent"
+	                    android:src="@drawable/ic_action_search"/>
+	                <TextView 
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:hint="搜索"
+	                    android:textSize="@dimen/normal_word_size"
+	                    android:gravity="center"
+	                    android:layout_marginLeft="20dp"/>
+	            </LinearLayout>
+	        </FrameLayout>
+	        
+	        <ImageView 
+	            android:id="@+id/refresh"
+	            android:layout_width="wrap_content"
+	            android:layout_height="match_parent"
+	            android:src="@drawable/ic_action_refresh"/>
+	        
+   	        <ImageView 
+	            android:id="@+id/delete_contact"
+	            android:layout_width="wrap_content"
+	            android:layout_height="match_parent"
+	            android:src="@drawable/ic_action_delete"
+	            android:layout_marginLeft="15dp"/>
+	    </LinearLayout>
+	   
+	    <FrameLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="0dp"
+	        android:layout_weight="1">
+   	        <LinearLayout 
+   	            android:layout_width="match_parent"
+   	            android:layout_height="match_parent"
+   	            android:orientation="horizontal"
+   	            android:gravity="center_vertical">
+       	        <ListView 
+			        android:id="@+id/pb_listview"
+			        android:layout_width="0dp"
+			        android:layout_height="match_parent"
+			        android:layout_weight="7"
+			        android:scrollbars="none"
+			        android:listSelector="@drawable/click_call_record_item_selector"/>
+       	        <View 
+       	            android:layout_width="20dp"
+       	            android:layout_height="match_parent"/>
+				<com.example.mytestdemo.widget.SideBar 
+				    android:id="@+id/sidebar"
+				    android:layout_width="0dp"
+				    android:layout_height="match_parent"
+				    android:layout_weight="4"/>       	        
+   	        </LinearLayout>
+            <TextView
+	            android:id="@+id/dialog"
+	            android:layout_width="80.0dip"
+	            android:layout_height="80.0dip"
+	            android:layout_gravity="center"
+	            android:background="@drawable/round_edittext"
+	            android:gravity="center"
+	            android:textColor="#ffffffff"
+	            android:textSize="30.0dip"
+	            android:visibility="invisible" />
+	    </FrameLayout>
+	    
+	</LinearLayout>
+	
+	<View 
+	    android:layout_width="0dp"
+	    android:layout_height="match_parent"
+	    android:layout_weight="1"/>	
+
+</LinearLayout>

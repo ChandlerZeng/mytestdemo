@@ -21,6 +21,14 @@ import com.example.mytestdemo.entity.User;
 import android.content.Context;
 
 public class UserDao {
+    public static final String CALL_RECORD_TABLE_NAME = "call_record";
+    public static final String COLUMN_NAME_CALL_RECORD_ID = "_id";
+    public static final String COLUMN_NAME_CALL_RECORD_NAME = "name";
+    public static final String COLUMN_NAME_CALL_RECORD_NUMBER = "number";
+    public static final String COLUMN_NAME_CALL_RECORD_DATE = "date";
+    public static final String COLUMN_NAME_CALL_RECORD_TYPE = "type";
+    public static final String COLUMN_NAME_CALL_RECORD_DURATION = "duration";
+    
     public static final String Random_IDS_TABLE_NAME = "randonids";
     public static final String COLUMN_NAME_RANDOM_IDS = "random_ids";
     public static final String COLUMN_NAME_RANDOM_AUTO_IDS = "_ids";

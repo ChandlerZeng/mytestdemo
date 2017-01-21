@@ -1,6 +1,8 @@
 package com.example.mytestdemo;
 
 import com.example.mytestdemo.txz.TXZTestInterface;
+import com.example.mytestdemo.utils.LogUtil;
+import com.example.mytestdemo.utils.LogcatHelper;
 
 import android.app.Application;
 import android.content.ComponentCallbacks;
@@ -21,6 +23,8 @@ public class MyTestApplication extends Application{
 		super.onCreate();
 		instance = this;
 		TXZTestInterface.getInstance().Init(this);
+		LogUtil.setContext(this);
+		LogcatHelper.getInstance(this).start();
 		Log.d("RituNavi", "MyTestApplication onCreate");
 	}
 

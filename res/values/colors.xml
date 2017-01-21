@@ -9,6 +9,18 @@
     <color name="left_button_select">#1b1b1b</color>
     <color name="left_button_unselect">#303030</color>
     <color name="keyboard_line">#404245</color>
-     <!-- 电话按钮面板颜色 -->
+    
+    <!-- 电话按钮面板颜色 -->
     <color name="greyblack">#012c2f32</color>
+    <!-- 背景色 -->
+    <color name="background">#0c121e</color>
+    <!-- 背景色2 -->
+    <color name="background2">#374155</color>
+    <!-- 灰线颜色 -->
+    <color name="greyline">#666666</color>
+    <!-- 浅蓝色 -->
+    <color name="light_blue">#076fb6</color>
+    <!-- 进度条颜色 -->
+    <color name="progress_color">#0090ff</color>
+    <color name="red">#db2b27</color>
 </resources>

@@ -38,6 +38,7 @@ import com.example.mytestdemo.txz.NaviToolInterface;
 import com.example.mytestdemo.txz.TXZNaviSettingReceiver;
 import com.example.mytestdemo.txz.TXZTestInterface;
 import com.example.mytestdemo.utils.LogUtil;
+import com.example.mytestdemo.utils.LogcatHelper;
 import com.txznet.sdk.TXZConfigManager;
 import com.txznet.sdk.TXZPowerManager;
 import com.txznet.sdk.TXZCallManager.Contact;
@@ -97,6 +98,7 @@ public class MainTestActivity extends BaseActivity implements OnClickListener{
 		// TODO Auto-generated method stub
 		super.onDestroy();
 		Log.d("RituNavi", "MainTestActivity onDestroy");
+		LogcatHelper.getInstance(getApplicationContext()).stop();
 	}
 
 

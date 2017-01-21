@@ -9,7 +9,8 @@
     <dimen name="bt_phone_margin">8dp</dimen>
     <dimen name="bt_phone_inner_margin">4dp</dimen>
     <dimen name="bt_phone_dail_num_left_padding">15dp</dimen>
-    <dimen name="bt_call_record_item_height">65dp</dimen>
+    <dimen name="bt_phone_contact_item_height">45dp</dimen>
+    <dimen name="bt_call_record_item_height">55dp</dimen>
     
     <dimen name="bt_music_left_margin_top_bottom">25dp</dimen>
     <dimen name="bt_music_left_margin_bottom">40dp</dimen>
@@ -39,7 +40,7 @@
   	<dimen name="music_time_word_size">12sp</dimen>
   	<dimen name="bt_calling_time">20sp</dimen>
   	
-  	<dimen name="normal_word_size3">22sp</dimen>
+  	<dimen name="normal_word_size3">16sp</dimen>
   	<dimen name="normal_word_size4">23sp</dimen>
   	<dimen name="music_info_text">25sp</dimen>
   	<dimen name="music_play_size">49dp</dimen>

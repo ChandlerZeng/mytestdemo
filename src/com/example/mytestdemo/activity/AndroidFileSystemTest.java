@@ -25,11 +25,10 @@ public class AndroidFileSystemTest extends BaseActivity{
     @Override  
     public void onCreate(Bundle savedInstanceState) {  
         super.onCreate(savedInstanceState);  
-        setContentView(R.layout.fragment_bt_phone);  
+        setContentView(R.layout.activity_afile_system);  
     /*  
      * 1.创建并返回一个目录，在这个目录下存储应用程序的数据文件  
      * 输出结果为： getFilesDir():/data/data/com.ghg.IO/files 
-     *  
      */  
        File dir= getFilesDir();  
        System.out.println("getFilesDir():"+dir.toString());  
