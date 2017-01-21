@@ -219,4 +219,39 @@ public class IOStream {
         System.arraycopy(data3,data3.length-4,head,0,head.length);
         System.out.println(new String(head));
     }
+    
+    public static void fileCopy(String infile , String outfile){
+        try {
+            byte[] data = new byte[1024];
+            File srcFile = new File(infile);
+            File desFile = new File(outfile);
+            BufferedInputStream bufferedInputStream =
+                new BufferedInputStream(
+                         new FileInputStream(srcFile));
+            BufferedOutputStream bufferedOutputStream =
+                new BufferedOutputStream(
+                         new FileOutputStream(desFile));
+            System.out.println("复制文件：" +
+                             srcFile.length() + "字节");
+            while(bufferedInputStream.read(data) != -1) {
+                bufferedOutputStream.write(data);
+                System.out.println("bufferedInputStream.available()"+bufferedInputStream.available());
+            }
+          
+            // 将缓冲区中的数据全部写出
+            bufferedOutputStream.flush();
+            // 关闭流
+            bufferedInputStream.close();
+            bufferedOutputStream.close();
+            System.out.println("复制完成");
+        }
+        catch(ArrayIndexOutOfBoundsException e) {
+            System.out.println(
+                    "using: java UseFileStream src des");
+            e.printStackTrace();
+        }
+        catch(IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

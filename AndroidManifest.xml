@@ -153,6 +153,10 @@
             android:name="com.example.mytestdemo.WindowParamsActivity"
             android:label="@string/title_activity_window_params" >
         </activity>
+        <activity
+            android:name="com.example.mytestdemo.FileCopyActivity"
+            android:label="@string/title_activity_file_copy" >
+        </activity>
     </application>
 
 </manifest>

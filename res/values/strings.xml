@@ -43,5 +43,6 @@
     <string name="phone_audio">手机音频</string>
     <string name="recent_call">最近通话</string>
     <string name="title_activity_window_params">WindowParamsActivity</string>
+    <string name="title_activity_file_copy">FileCopyActivity</string>
 
 </resources>

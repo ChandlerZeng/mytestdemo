@@ -7,8 +7,6 @@
     <string name="txz_sdk_init_app_token">4fb6f83c3da2963c2fb98f89679ca80a19a7d570</string>
     <string-array name="txz_sdk_init_wakeup_keywords">
         <item>你好小道</item>
-        <item>你好小道2</item>
-        <item>你好小三</item>
     </string-array>
 
 </resources>

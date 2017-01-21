@@ -26,6 +26,7 @@ public class LogcatHelper {
     private static final String appFolder = "com.example.mytestdemo";
     // ¹ËÂÇµÄLogÃû³Æ
     private static final String filterLogName = "RituNavi";
+    private static boolean isStarted = false;
 
     /**
      * 
@@ -62,13 +63,18 @@ public class LogcatHelper {
     public void start() {
         if (mLogDumper == null)
             mLogDumper = new LogDumper(String.valueOf(mPId), PATH_LOGCAT);
-        mLogDumper.start();
+        if(!isStarted){
+            mLogDumper.start();
+            isStarted = true;
+        }
+        
     }
 
     public void stop() {
         if (mLogDumper != null) {
             mLogDumper.stopLogs();
             mLogDumper = null;
+            isStarted = false;
         }
     }
 

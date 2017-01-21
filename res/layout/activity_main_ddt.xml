@@ -165,7 +165,13 @@
                 android:id="@+id/btn_window_params"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="WinParams" />         
+                android:text="WinParams" />
+
+            <Button
+                android:id="@+id/btn_file_copy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="copy" />
 
         </LinearLayout>
     </LinearLayout>

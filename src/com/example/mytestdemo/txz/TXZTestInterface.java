@@ -136,6 +136,8 @@ public class TXZTestInterface implements InitListener, ActiveListener{
 		cmdListenerCloseTest();
 		cmdListenerOpenKuWo();
 		cmdListenerCloseKuWo();
+//		cmdListenerGoHome();
+//        cmdListenerGoToCompany();
 		/*cmdListenerOpenRealtimeTraffic();
 //		cmdListenerCloseRealtimeTraffic();
 //		cmdListenerChangeRouteTypeFast();
@@ -147,9 +149,7 @@ public class TXZTestInterface implements InitListener, ActiveListener{
 		cmdListenerOpenHistoryRecord();
 		cmdListenerCloseHistoryRecord();
 		cmdListenerOpenUsuallyplace();
-		cmdListenerCloseUsuallyplace();
-//		cmdListenerGoHome();
-//		cmdListenerGoToCompany();
+		cmdListenerCloseUsuallyplace();		
 		cmdListenerViewRoute();
 		cmdListenerBackToMap();
 		cmdListenerOpenRoutePlan();
@@ -167,6 +167,49 @@ public class TXZTestInterface implements InitListener, ActiveListener{
 //		cmdListenerChangePagePrevious();
 //		cmdListenerChangePageNext();
 */	}
+	
+	private void cmdListenerGoHome() {
+        TXZAsrManager.getInstance().addCommandListener(new CommandListener() {
+            @Override
+            public void onCommand(String arg0, String arg1) {
+                if ("CMD_GO_HOME".equals(arg1)) {
+                    Intent intent = new Intent();
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    ComponentName component = new ComponentName("cn.ritu.rtnavi",
+                            "cn.ritu.rtnavi.main.MainActivity");
+                    intent.setComponent(component);
+                    if (intent.resolveActivity(MyTestApplication.getInstance().getPackageManager()) != null)
+                    {
+                        MyTestApplication.getInstance().getApplicationContext().startActivity(intent);
+                    }
+                    transferCMD(TXZBasic.ACTION_TYPE_GO_HOME);
+                }
+            }
+        });
+        TXZAsrManager.getInstance().regCommand(new String[] { "回家", "我要回家" },"CMD_GO_HOME");
+    }
+	
+	private void cmdListenerGoToCompany() {
+        TXZAsrManager.getInstance().addCommandListener(new CommandListener() {
+            @Override
+            public void onCommand(String arg0, String arg1) {
+                if ("CMD_GO_TO_COMPANY".equals(arg1)) {
+                    Intent intent = new Intent();
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    ComponentName component = new ComponentName("cn.ritu.rtnavi",
+                            "cn.ritu.rtnavi.main.MainActivity");
+                    intent.setComponent(component);
+                    if (intent.resolveActivity(MyTestApplication.getInstance().getPackageManager()) != null)
+                    {
+                        MyTestApplication.getInstance().getApplicationContext().startActivity(intent);
+                    }
+                    
+                    transferCMD(TXZBasic.ACTION_TYPE_GO_TO_COMPANY);
+                }
+            }
+        });
+        TXZAsrManager.getInstance().regCommand(new String[] { "单位", "去单位", "公司", "去公司" },"CMD_GO_TO_COMPANY");
+    }
 
 	
 	private void cmdListenerStartNavi() {

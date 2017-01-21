@@ -509,6 +509,7 @@ public class FragmentThree extends Fragment implements OnClickListener,IDialPann
         }
         DemoDBManager.getInstance().saveCallRecord(callRecord);
         listCallRecord = DemoDBManager.getInstance().getCallRecord();
+        if(mRecordAdapter!=null)
         mRecordAdapter.setCallRecords(listCallRecord);
     }
 

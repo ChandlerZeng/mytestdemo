@@ -27,7 +27,7 @@ public class SuUtil {
 	    /** 
 	     * 初始化进程 
 	     */  
-	    private static void initProcess() {  
+	    public static void initProcess() {  
 	        if (process == null)  
 	            try {  
 	                process = Runtime.getRuntime().exec("su");  
