@@ -33,10 +33,12 @@ public class PbAdapter extends BaseAdapter implements SectionIndexer {
     public PbAdapter(Context mContext, List<BtContact> list) {
         this.mContext = mContext;
         this.list = list;
+        getDisplayInitList();
     }
 
     public void updateListView(List<BtContact> list) {
         this.list = list;
+        getDisplayInitList();
         notifyDataSetChanged();
     }
 
@@ -72,10 +74,10 @@ public class PbAdapter extends BaseAdapter implements SectionIndexer {
             viewHolder = (ViewHolder) arg1.getTag();
         }
 
-        if (!initalList.contains(contact.getNameInital())) {
+       /* if (!initalList.contains(contact.getNameInital())) {
             initalList.add(contact.getNameInital());
             nameList.add(contact.getName());
-        }
+        }*/
 
         /*
          * int section = getSectionForPosition(arg0);
@@ -116,6 +118,15 @@ public class PbAdapter extends BaseAdapter implements SectionIndexer {
         viewHolder.number.setText(contact.getNumber());
 
         return arg1;
+    }
+    
+    private void getDisplayInitList(){
+        for(int i=0;i<list.size();i++){
+            if (!initalList.contains(list.get(i).getNameInital())) {
+                initalList.add(list.get(i).getNameInital());
+                nameList.add(list.get(i).getName());
+            }
+        }
     }
 
     @Override

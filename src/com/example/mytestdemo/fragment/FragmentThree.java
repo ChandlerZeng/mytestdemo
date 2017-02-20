@@ -37,7 +37,6 @@ import com.example.mytestdemo.adapter.CallRecordListAdapter;
 import com.example.mytestdemo.adapter.PbAdapter;
 import com.example.mytestdemo.adapter.PbAdapter.OnLetterChangedListener;
 import com.example.mytestdemo.database.DemoDBManager;
-import com.example.mytestdemo.utils.DateUtil;
 import com.example.mytestdemo.utils.LogUtil;
 import com.example.mytestdemo.utils.PinyinComparator;
 import com.example.mytestdemo.widget.SideBar;
@@ -58,6 +57,7 @@ public class FragmentThree extends Fragment implements OnClickListener,IDialPann
     private DialPannel dialPannel;
 
     private FrameLayout content;
+    private LinearLayout callPhoneLayout;
     private LinearLayout callRecordLayout;
     private LinearLayout contactBookLayout;
     private int curLayout = PHONE_LAYOUT;
@@ -106,6 +106,7 @@ public class FragmentThree extends Fragment implements OnClickListener,IDialPann
     private void init(LayoutInflater inflater, View view) {
         dialPannel = new DialPannel(this);
         content = (FrameLayout) view.findViewById(R.id.content);
+        callPhoneLayout = (LinearLayout) view.findViewById(R.id.phone_layout);
         callRecordLayout = (LinearLayout) inflater.inflate(
                 R.layout.bt_phone_call_record_layout, null);
         contactBookLayout = (LinearLayout) inflater.inflate(
@@ -339,38 +340,41 @@ public class FragmentThree extends Fragment implements OnClickListener,IDialPann
 
             switch (type) {
             case PHONE_LAYOUT:
-                imageview1.setImageResource(R.drawable.dial_keyboard_blue);
-                linearLayout1.setBackgroundColor(getResources().getColor(
-                        R.color.left_button_select));
-                textView1.setTextColor(getResources().getColor(R.color.blue));
-                if (getCurLayout() != null) {
+                if (getCurLayout() != callPhoneLayout) {
                     content.removeView(getCurLayout());
-                }
-                curLayout = PHONE_LAYOUT;
+                    imageview1.setImageResource(R.drawable.dial_keyboard_blue);
+                    linearLayout1.setBackgroundColor(getResources().getColor(
+                            R.color.left_button_select));
+                    textView1.setTextColor(getResources().getColor(R.color.blue));                   
+                    curLayout = PHONE_LAYOUT;
+                    LogUtil.e("PHONE_LAYOUT clicked");
+                }             
                 break;
             case CALL_RECORD_LAYOUT:
-                imageview2.setImageResource(R.drawable.call_record_blue);
-                linearLayout2.setBackgroundColor(getResources().getColor(
-                        R.color.left_button_select));
-                textView2.setTextColor(getResources().getColor(R.color.blue));
-                if (curLayout == CONTACT_BOOK_LAYOUT) {
-                    content.removeView(contactBookLayout);
-                }
-                content.addView(callRecordLayout);
-                initCallLayout(callRecordLayout);
-                curLayout = CALL_RECORD_LAYOUT;
+                if (getCurLayout() != callRecordLayout) {
+                    content.removeView(getCurLayout());
+                    imageview2.setImageResource(R.drawable.call_record_blue);
+                    linearLayout2.setBackgroundColor(getResources().getColor(
+                            R.color.left_button_select));
+                    textView2.setTextColor(getResources().getColor(R.color.blue));                  
+                    content.addView(callRecordLayout);
+                    initCallLayout(callRecordLayout);
+                    curLayout = CALL_RECORD_LAYOUT;
+                    LogUtil.e("CALL_RECORD_LAYOUT clicked");
+                }               
                 break;
             case CONTACT_BOOK_LAYOUT:
-                imageview3.setImageResource(R.drawable.contacts_blue);
-                linearLayout3.setBackgroundColor(getResources().getColor(
-                        R.color.left_button_select));
-                textView3.setTextColor(getResources().getColor(R.color.blue));
-                if (curLayout == CALL_RECORD_LAYOUT) {
-                    content.removeView(callRecordLayout);
-                }
-                content.addView(contactBookLayout);
-                initContactLayout(contactBookLayout);
-                curLayout = CONTACT_BOOK_LAYOUT;
+                if (getCurLayout() != contactBookLayout) {
+                    content.removeView(getCurLayout());
+                    imageview3.setImageResource(R.drawable.contacts_blue);
+                    linearLayout3.setBackgroundColor(getResources().getColor(
+                            R.color.left_button_select));
+                    textView3.setTextColor(getResources().getColor(R.color.blue));
+                    content.addView(contactBookLayout);
+                    initContactLayout(contactBookLayout);
+                    curLayout = CONTACT_BOOK_LAYOUT;
+                    LogUtil.e("CONTACT_BOOK_LAYOUT clicked");
+                }              
                 break;
             }
         }
@@ -383,7 +387,7 @@ public class FragmentThree extends Fragment implements OnClickListener,IDialPann
         } else if (curLayout == CONTACT_BOOK_LAYOUT) {
             return contactBookLayout;
         } else {
-            return null;
+            return callPhoneLayout;
         }
     }
     
@@ -409,10 +413,13 @@ public class FragmentThree extends Fragment implements OnClickListener,IDialPann
         sideBar = (SideBar) view.findViewById(R.id.sidebar);
         searchLayout = (LinearLayout) view.findViewById(R.id.search_layout);
         editText = (EditText)view.findViewById(R.id.search_edittext);
-        listContacts = new ArrayList<BtContact>();
-        listContacts = DemoDBManager.getInstance().getLoacalPhoneContacts(getActivity());
-        PinyinComparator pinyinComparator = new PinyinComparator();
-        Collections.sort(listContacts, pinyinComparator);
+        if(listContacts==null){
+            LogUtil.e("listContacts is null");
+            listContacts = new ArrayList<BtContact>();
+            listContacts = DemoDBManager.getInstance().getLoacalPhoneContacts(getActivity()); 
+            PinyinComparator pinyinComparator = new PinyinComparator();
+            Collections.sort(listContacts, pinyinComparator);
+        }           
         pbAdapter = new PbAdapter(getActivity(), listContacts);
         pbListView.setAdapter(pbAdapter);
         sideBar.setTextView(dialog);
@@ -473,7 +480,11 @@ public class FragmentThree extends Fragment implements OnClickListener,IDialPann
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
                     long arg3) {
-                makeCall(listContacts.get(arg2).getNumber(),"1");                                
+                if(listContacts.get(arg2).getNumber()==null || listContacts.get(arg2).getNumber().equals("")){
+                    Toast.makeText(getActivity(), "联系人无效",Toast.LENGTH_SHORT ).show();   
+                }else{
+                    makeCall(listContacts.get(arg2).getNumber(),"1");  
+                }                                            
             }
         });
     }

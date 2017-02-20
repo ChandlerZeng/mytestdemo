@@ -19,6 +19,8 @@ import android.widget.Spinner;
 import android.widget.Toast;
 import cn.ritu.bluephone.bean.BtContact;
 
+import com.example.mytestdemo.CanvasActivity;
+import com.example.mytestdemo.DimBarcodeActivity;
 import com.example.mytestdemo.FileCopyActivity;
 import com.example.mytestdemo.MyTestApplication;
 import com.example.mytestdemo.R;
@@ -80,6 +82,8 @@ public class MainTestActivity extends BaseActivity implements OnClickListener{
 	private Button aFileSystem;
 	private Button btnWinParams;
 	private Button btnFileCopy;
+	private Button btnBarcode;
+	private Button btnDrawView;
 	
 	private Spinner spinnerMap;
 
@@ -170,6 +174,8 @@ public class MainTestActivity extends BaseActivity implements OnClickListener{
 		aFileSystem = (Button) findViewById(R.id.btn_afile_system);
 		btnWinParams = (Button) findViewById(R.id.btn_window_params);
 		btnFileCopy = (Button) findViewById(R.id.btn_file_copy);
+		btnBarcode = (Button) findViewById(R.id.btn_barcode);
+		btnDrawView = (Button) findViewById(R.id.btn_draw_view);
 		
 		progressBar = (ProgressBar) findViewById(R.id.progressBar);
 		spinnerMap = (Spinner) findViewById(R.id.spinnerMap);
@@ -187,6 +193,8 @@ public class MainTestActivity extends BaseActivity implements OnClickListener{
 		aFileSystem.setOnClickListener(this);
 		btnWinParams.setOnClickListener(this);
 		btnFileCopy.setOnClickListener(this);
+		btnBarcode.setOnClickListener(this);
+		btnDrawView.setOnClickListener(this);
 
 		spinnerMap.setSelection(getSelectedMap());
 //		NaviToolInterface.getInstance().setMaps(getSelectedMap());
@@ -470,6 +478,14 @@ public class MainTestActivity extends BaseActivity implements OnClickListener{
 		case R.id.btn_file_copy:
             startActivity(new Intent(MainTestActivity.this,FileCopyActivity.class));
             break;
+            
+		case R.id.btn_barcode:
+		    startActivity(new Intent(MainTestActivity.this,DimBarcodeActivity.class));
+		    break;
+		    
+		case R.id.btn_draw_view:
+		    startActivity(new Intent(MainTestActivity.this,CanvasActivity.class));
+		    break;
             
         default:
 			break;

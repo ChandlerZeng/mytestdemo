@@ -21,6 +21,7 @@ import com.example.mytestdemo.common.Common;
 import com.example.mytestdemo.main.MainTestActivity;
 import com.example.mytestdemo.utils.LogUtil;
 import com.txznet.sdk.TXZAsrManager;
+import com.txznet.sdk.TXZAsrManager.AsrComplexSelectCallback;
 import com.txznet.sdk.TXZAsrManager.CommandListener;
 import com.txznet.sdk.TXZCallManager;
 import com.txznet.sdk.TXZConfigManager;
@@ -66,6 +67,7 @@ public class TXZTestInterface implements InitListener, ActiveListener{
 //		TXZNavManager.getInstance().setNavTool(TXZNavManager.NavToolType.NAV_TOOL_BAIDU_MAP);
 		/*cmdListenerStartNavi();*/
 		cmdAllCommandListener();
+		asrAllCommandListener();
 		TXZCallManager.getInstance().setCallTool(new CallToolInterface());
 //		TXZAsrManager.getInstance().setAsrTool(new AsrToolInterface());
 		
@@ -167,6 +169,42 @@ public class TXZTestInterface implements InitListener, ActiveListener{
 //		cmdListenerChangePagePrevious();
 //		cmdListenerChangePageNext();
 */	}
+	
+	private void asrAllCommandListener(){
+	    asrListenerHome();
+	}
+	
+	private void asrListenerHome(){
+	    TXZAsrManager.getInstance().useWakeupAsAsr(new AsrComplexSelectCallback(){
+
+            @Override
+            public String getTaskId() {
+                // TODO Auto-generated method stub
+                return "asr_cmd_home";
+            }
+
+            @Override
+            public boolean needAsrState() {
+                // TODO Auto-generated method stub
+                return false;
+            }
+
+            @Override
+            public void onCommandSelected(String type, String command) {
+                // TODO Auto-generated method stub
+                super.onCommandSelected(type, command);
+                if("CMD_HOME".equals(type)){
+                        LogUtil.e("type0:"+type+",command0:"+command);
+                        Intent intent = new Intent(Intent.ACTION_MAIN);
+                        intent.addCategory(Intent.CATEGORY_HOME);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        MyTestApplication.getInstance().startActivity(intent);
+                        LogUtil.e("type:"+type+",command:"+command);
+                }
+            } 	        
+	    }.addCommand("CMD_HOME", "回到桌面","返回桌面"));
+	    LogUtil.e("RituNavi", "正在为您注册回到桌面唤醒词");
+	}
 	
 	private void cmdListenerGoHome() {
         TXZAsrManager.getInstance().addCommandListener(new CommandListener() {

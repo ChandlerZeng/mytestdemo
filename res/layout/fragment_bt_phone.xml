@@ -104,6 +104,7 @@
         android:layout_toRightOf="@id/left_menu" >
 
         <LinearLayout
+            android:id="@+id/phone_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal" >

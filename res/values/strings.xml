@@ -44,5 +44,7 @@
     <string name="recent_call">最近通话</string>
     <string name="title_activity_window_params">WindowParamsActivity</string>
     <string name="title_activity_file_copy">FileCopyActivity</string>
+    <string name="title_activity_dim_barcode">DimBarcodeActivity</string>
+    <string name="title_activity_canvas">CanvasActivity</string>
 
 </resources>

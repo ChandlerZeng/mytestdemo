@@ -54,9 +54,10 @@ public class StringTest {
 
     public static void main(String[] args) {  
         StringTest test = new StringTest();
-        test.judge();
+//        test.judge();
         String string = new String("¹ş¹ş");
         String string1 = new String("ÄãÃÃ");
+//        String string2 = new String({0xB5,0xB1},"GB2312");
         byte[] b0,b1,b2,b3,b4,b5;
         try {
             b0 = string.getBytes();

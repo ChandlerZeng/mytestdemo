@@ -165,13 +165,25 @@
                 android:id="@+id/btn_window_params"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="WinParams" />
+                android:text="WinPa" />
 
             <Button
                 android:id="@+id/btn_file_copy"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="copy" />
+
+            <Button
+                android:id="@+id/btn_barcode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Barcode" />
+
+            <Button
+                android:id="@+id/btn_draw_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Draw" />
 
         </LinearLayout>
     </LinearLayout>

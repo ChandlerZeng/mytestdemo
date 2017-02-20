@@ -157,6 +157,14 @@
             android:name="com.example.mytestdemo.FileCopyActivity"
             android:label="@string/title_activity_file_copy" >
         </activity>
+        <activity
+            android:name="com.example.mytestdemo.DimBarcodeActivity"
+            android:label="@string/title_activity_dim_barcode" >
+        </activity>
+        <activity
+            android:name="com.example.mytestdemo.CanvasActivity"
+            android:label="@string/title_activity_canvas" >
+        </activity>
     </application>
 
 </manifest>
