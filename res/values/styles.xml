@@ -2,13 +2,13 @@
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
     <style name="AppBaseTheme" parent="android:Theme.Light">
         <!--
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
+            backward-compatibility can go here.
         -->
     </style>
 
@@ -25,40 +25,81 @@
     </style>
 
     <style name="myHoloLightBlueActionBar" parent="@android:style/Theme.Holo.Light.DarkActionBar">
-<!--         <item name="android:windowBackground">@color/white</item> -->
+
+        <!-- <item name="android:windowBackground">@color/white</item> -->
         <item name="android:windowNoTitle">false</item>
         <item name="android:actionBarStyle">@style/myActionBarStyle</item>
         <item name="android:windowIsTranslucent">false</item>
         <item name="android:windowAnimationStyle">@style/myAnimation</item>
     </style>
-    
+
     <style name="myAnimation" parent="@android:style/Animation.Activity">
-        <item name ="android:activityOpenEnterAnimation">@anim/slide_left_in</item>
-        <item name ="android:activityOpenExitAnimation">@anim/slide_left_out</item>
-        <item name ="android:activityCloseEnterAnimation">@anim/slide_left_out</item>
-<!--         <item name ="android:activityCloseExitAnimation">@anim/slide_left_in</item> -->
+        <item name="android:activityOpenEnterAnimation">@anim/slide_left_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_left_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/slide_left_out</item>
+        <!-- <item name ="android:activityCloseExitAnimation">@anim/slide_left_in</item> -->
     </style>
-    
+
     <style name="myActionBarStyle" parent="@android:style/Widget.Holo.Light.ActionBar">
         <item name="android:background">@color/blue</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">50dp</item>
         <item name="android:titleTextStyle">@style/AcBar_titleStyle</item>
     </style>
-    
-      <style name="AcBar_titleStyle">    
-          
-        <item name="android:textColor">#FFFFFF</item>    
-        <item name="android:textSize">20sp</item>    
-    </style>  
-     <style name="progress_dialog" parent="@android:style/Theme.Dialog">  
-        <item name="android:windowFrame">@null</item>  
-        <item name="android:windowIsFloating">true</item>  
-        <item name="android:windowIsTranslucent">true</item>  
-        <item name="android:windowNoTitle">true</item>  
-        <item name="android:background">@color/semi_transparent</item>  
-        <item name="android:windowBackground">@color/semi_transparent</item>  
-        <item name="android:backgroundDimEnabled">true</item>  
-    </style>  
+
+    <style name="AcBar_titleStyle">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="progress_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@color/semi_transparent</item>
+        <item name="android:windowBackground">@color/semi_transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="RadioFMTextViewStyle1">
+        <item name="android:text">88.0</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/normal_word_size3</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="RadioFMTextViewStyle2">
+        <item name="android:text">MHz</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/dial_num_size2</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="RadioFMLinearLayoutStyle">
+        <item name="android:background">@drawable/radio_textview_button_selector</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:clickable">true</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">@dimen/main_padding_left_right</item>
+        <item name="android:layout_marginLeft">@dimen/bt_phone_inner_margin</item>
+        <item name="android:layout_marginRight">@dimen/bt_phone_inner_margin</item>
+        <item name="android:layout_marginTop">@dimen/bt_phone_inner_margin</item>
+    </style>
+
+    <!-- popwidnow 显示消失动画 -->
+
+    <style name="popwindow_delete_btn_anim_style">
+        <item name="android:windowEnterAnimation">@anim/delete_btn_show</item>
+        <!-- 指定显示的动画xml -->
+        <item name="android:windowExitAnimation">@anim/delete_btn_hide</item>
+        <!-- 指定消失的动画xml -->
+
+    </style>
 
 </resources>

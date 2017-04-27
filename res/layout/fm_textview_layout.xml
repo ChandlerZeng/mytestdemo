@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/bt_phone_inner_margin"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:id="@+id/fm_textview_layout1"
+            style="@style/RadioFMLinearLayoutStyle" >
+
+            <TextView 
+                android:id="@+id/fm_textview1"
+                style="@style/RadioFMTextViewStyle1" />
+
+            <TextView style="@style/RadioFMTextViewStyle2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/fm_textview_layout2"
+            style="@style/RadioFMLinearLayoutStyle" >
+
+            <TextView 
+                android:id="@+id/fm_textview2"
+                style="@style/RadioFMTextViewStyle1" />
+
+            <TextView style="@style/RadioFMTextViewStyle2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/fm_textview_layout3"
+            style="@style/RadioFMLinearLayoutStyle" >
+
+            <TextView 
+                android:id="@+id/fm_textview3"
+                style="@style/RadioFMTextViewStyle1" />
+
+            <TextView style="@style/RadioFMTextViewStyle2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/fm_textview_layout4"
+            style="@style/RadioFMLinearLayoutStyle" >
+
+            <TextView 
+                android:id="@+id/fm_textview4"
+                style="@style/RadioFMTextViewStyle1" />
+
+            <TextView style="@style/RadioFMTextViewStyle2" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/bt_phone_inner_margin"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:id="@+id/fm_textview_layout5"
+            style="@style/RadioFMLinearLayoutStyle" >
+
+            <TextView 
+                android:id="@+id/fm_textview5"
+                style="@style/RadioFMTextViewStyle1" />
+
+            <TextView style="@style/RadioFMTextViewStyle2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/fm_textview_layout6"
+            style="@style/RadioFMLinearLayoutStyle" >
+
+            <TextView 
+                android:id="@+id/fm_textview6"
+                style="@style/RadioFMTextViewStyle1" />
+
+            <TextView style="@style/RadioFMTextViewStyle2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/fm_textview_layout7"
+            style="@style/RadioFMLinearLayoutStyle" >
+
+            <TextView 
+                android:id="@+id/fm_textview7"
+                style="@style/RadioFMTextViewStyle1" />
+
+            <TextView style="@style/RadioFMTextViewStyle2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/fm_textview_layout8"
+            style="@style/RadioFMLinearLayoutStyle" >
+
+            <TextView 
+                android:id="@+id/fm_textview8"
+                style="@style/RadioFMTextViewStyle1" />
+
+            <TextView style="@style/RadioFMTextViewStyle2" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

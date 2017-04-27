@@ -1,0 +1,54 @@
+<com.example.mytestdemo.widget.DragHelperView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drag_help_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/lv_dragview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/light_pink"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:background="@color/greyline"
+            android:gravity="center"
+            android:text="I will be back to origin position !" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:background="#44ff0000"
+            android:gravity="center"
+            android:text="I can be dragged !" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:background="@color/blue"
+            android:gravity="center"
+            android:text="use edge tracker to drag me !"
+            android:textColor="@color/white" />
+        
+          <TextView
+            android:id="@+id/drag_tv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:background="@color/greyline"
+            android:gravity="center"
+            android:text="bottom view, drag me to see difference please !"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</com.example.mytestdemo.widget.DragHelperView>

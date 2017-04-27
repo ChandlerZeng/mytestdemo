@@ -7,7 +7,10 @@
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="19" />
-
+    <!-- 屏幕唤醒 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- 屏幕熄灭 -->
+    <uses-permission android:name="android.permission.DEVICE_POWER" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
@@ -60,6 +63,8 @@
         <receiver android:name="com.example.mytestdemo.txz.TXZNaviSettingReceiver" >
             <intent-filter>
                 <action android:name="cn.ritu.rtnavi.select_map_action" />
+                <action android:name="android.intent.action.ACC_ON" />
+                <action android:name="android.intent.action.ACC_OVER" />
                 <action android:name="com.android.action.DDT_VOICHELPER" />
                 <action android:name="com.txznet.txz.record.show" />
                 <action android:name="com.txznet.txz.record.dismiss" />
@@ -164,6 +169,22 @@
         <activity
             android:name="com.example.mytestdemo.CanvasActivity"
             android:label="@string/title_activity_canvas" >
+        </activity>
+        <activity
+            android:name="com.example.mytestdemo.ScrollPositionActivity"
+            android:label="@string/title_activity_scroll_position" >
+        </activity>
+        <activity
+            android:name="com.example.mytestdemo.CustomWidgetActivity"
+            android:label="@string/title_activity_custom_widget" >
+        </activity>
+        <activity
+            android:name="com.example.mytestdemo.SwipeListViewActivity"
+            android:label="@string/title_activity_swipe_list_view" >
+        </activity>
+        <activity
+            android:name="com.example.mytestdemo.DragViewActivity"
+            android:label="@string/title_activity_drag_view" >
         </activity>
     </application>
 

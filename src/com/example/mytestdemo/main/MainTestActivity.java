@@ -1,5 +1,6 @@
 package com.example.mytestdemo.main;
 
+import java.io.File;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,8 +9,12 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.AudioManager;
 import android.os.Bundle;
+import android.os.Environment;
+import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -20,10 +25,14 @@ import android.widget.Toast;
 import cn.ritu.bluephone.bean.BtContact;
 
 import com.example.mytestdemo.CanvasActivity;
+import com.example.mytestdemo.CustomWidgetActivity;
 import com.example.mytestdemo.DimBarcodeActivity;
+import com.example.mytestdemo.DragViewActivity;
 import com.example.mytestdemo.FileCopyActivity;
 import com.example.mytestdemo.MyTestApplication;
 import com.example.mytestdemo.R;
+import com.example.mytestdemo.ScrollPositionActivity;
+import com.example.mytestdemo.SwipeListViewActivity;
 import com.example.mytestdemo.WindowParamsActivity;
 import com.example.mytestdemo.activity.AndroidFileSystemTest;
 import com.example.mytestdemo.activity.ContentProviderActivity;
@@ -42,6 +51,7 @@ import com.example.mytestdemo.txz.TXZNaviSettingReceiver;
 import com.example.mytestdemo.txz.TXZTestInterface;
 import com.example.mytestdemo.utils.LogUtil;
 import com.example.mytestdemo.utils.LogcatHelper;
+import com.example.mytestdemo.widget.SwipeListView;
 import com.txznet.sdk.TXZConfigManager;
 import com.txznet.sdk.TXZPowerManager;
 import com.txznet.sdk.TXZCallManager.Contact;
@@ -84,6 +94,14 @@ public class MainTestActivity extends BaseActivity implements OnClickListener{
 	private Button btnFileCopy;
 	private Button btnBarcode;
 	private Button btnDrawView;
+	private Button btnScroll;
+	private Button btnPauseMusic;
+	private Button btnCustomWidget;
+	private Button btnTxzOn;
+	private Button btnTxzOff;
+	private Button btnContextMenu;
+	private Button btnSwipeList;
+	private Button btnDragView;
 	
 	private Spinner spinnerMap;
 
@@ -94,6 +112,9 @@ public class MainTestActivity extends BaseActivity implements OnClickListener{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main_ddt);
 		init();
+		DisplayMetrics metric = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(metric);
+        float density = metric.density;  // ÆÁÄ»ÃÜ¶È£¨0.75 / 1.0 / 1.5£©
 		Log.d("RituNavi", "MainTestActivity onCreate");
 	}
 	
@@ -176,6 +197,14 @@ public class MainTestActivity extends BaseActivity implements OnClickListener{
 		btnFileCopy = (Button) findViewById(R.id.btn_file_copy);
 		btnBarcode = (Button) findViewById(R.id.btn_barcode);
 		btnDrawView = (Button) findViewById(R.id.btn_draw_view);
+		btnScroll = (Button) findViewById(R.id.scroll_position);
+		btnPauseMusic = (Button) findViewById(R.id.btn_pause_music);
+		btnCustomWidget = (Button) findViewById(R.id.btn_custom_widget);
+		btnTxzOn = (Button) findViewById(R.id.switch_on_txz);
+		btnTxzOff = (Button) findViewById(R.id.switch_off_txz);
+		btnContextMenu = (Button) findViewById(R.id.btn_context_menu);
+		btnSwipeList = (Button) findViewById(R.id.btn_swipe_list);
+		btnDragView = (Button) findViewById(R.id.btn_drag_view);
 		
 		progressBar = (ProgressBar) findViewById(R.id.progressBar);
 		spinnerMap = (Spinner) findViewById(R.id.spinnerMap);
@@ -195,6 +224,14 @@ public class MainTestActivity extends BaseActivity implements OnClickListener{
 		btnFileCopy.setOnClickListener(this);
 		btnBarcode.setOnClickListener(this);
 		btnDrawView.setOnClickListener(this);
+		btnScroll.setOnClickListener(this);
+		btnPauseMusic.setOnClickListener(this);
+		btnCustomWidget.setOnClickListener(this);
+		btnTxzOn.setOnClickListener(this);
+		btnTxzOff.setOnClickListener(this);
+		btnContextMenu.setOnClickListener(this);
+		btnSwipeList.setOnClickListener(this);
+		btnDragView.setOnClickListener(this);
 
 		spinnerMap.setSelection(getSelectedMap());
 //		NaviToolInterface.getInstance().setMaps(getSelectedMap());
@@ -206,14 +243,14 @@ public class MainTestActivity extends BaseActivity implements OnClickListener{
 				try {
 					 showProgress();
 					if (TXZConfigManager.getInstance().isInitedSuccess()) {
-						Toast.makeText(MainTestActivity.this, "Í¬ÐÐÕßÓïÒôÒÑ³õÊ¼»¯",
+						Toast.makeText(MainTestActivity.this, "Í¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ³ï¿½Ê¼ï¿½ï¿½",
 								Toast.LENGTH_SHORT).show();
 						 dismissProgress();
 					} else {
 						TXZTestInterface.getInstance().Init(
 								MyTestApplication.getInstance()
 										.getApplicationContext());
-						Log.d("TXZ TEST", "Í¬ÐÐÕßÓïÒô³õÊ¼»¯");
+						Log.d("TXZ TEST", "Í¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½");
 					}
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -233,12 +270,12 @@ public class MainTestActivity extends BaseActivity implements OnClickListener{
 						TXZPowerManager.getInstance().notifyPowerAction(
 								PowerAction.POWER_ACTION_POWER_OFF);
 						TXZPowerManager.getInstance().releaseTXZ();
-						Log.d("TXZ TEST", "Í¬ÐÐÕßÓïÒô¹Ø±Õ");
-						Toast.makeText(MainTestActivity.this, "Í¬ÐÐÕßÓïÒô¹Ø±Õ",
+						Log.d("TXZ TEST", "Í¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø±ï¿½");
+						Toast.makeText(MainTestActivity.this, "Í¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø±ï¿½",
 								Toast.LENGTH_SHORT).show();
 						
 					} else {
-						Toast.makeText(MainTestActivity.this, "Í¬ÐÐÕßÓïÒôÎ´³õÊ¼»¯",
+						Toast.makeText(MainTestActivity.this, "Í¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î´ï¿½ï¿½Ê¼ï¿½ï¿½",
 								Toast.LENGTH_SHORT).show();
 					}
 				} catch (Exception e) {
@@ -265,14 +302,14 @@ public class MainTestActivity extends BaseActivity implements OnClickListener{
 										.getInstance()
 										.notifyPowerAction(
 												PowerAction.POWER_ACTION_WAKEUP);
-								Log.d("RituNavi", "Í¬ÐÐÕßÓïÒôÖØÆô");
+								Log.d("RituNavi", "Í¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 								Toast.makeText(MainTestActivity.this,
-										"Í¬ÐÐÕßÓïÒôÖØÆô", Toast.LENGTH_SHORT).show();
+										"Í¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", Toast.LENGTH_SHORT).show();
 								// showProgress();
 							}
 						});
 					} else {
-						Toast.makeText(MainTestActivity.this, "Í¬ÐÐÕßÓïÒôÎ´³õÊ¼»¯",
+						Toast.makeText(MainTestActivity.this, "Í¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î´ï¿½ï¿½Ê¼ï¿½ï¿½",
 								Toast.LENGTH_SHORT).show();
 					}
 				} catch (Exception e) {
@@ -292,12 +329,12 @@ public class MainTestActivity extends BaseActivity implements OnClickListener{
 					if (TXZConfigManager.getInstance().isInitedSuccess()) {
 						TXZPowerManager.getInstance().notifyPowerAction(
 								PowerAction.POWER_ACTION_BEFORE_SLEEP);
-						Log.d("TXZ TEST", "Í¬ÐÐÕßÓïÒôÐÝÃß");
-						Toast.makeText(MainTestActivity.this, "Í¬ÐÐÕßÓïÒôÐÝÃß",
+						Log.d("TXZ TEST", "Í¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
+						Toast.makeText(MainTestActivity.this, "Í¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",
 								Toast.LENGTH_SHORT).show();
 						// showProgress();
 					} else {
-						Toast.makeText(MainTestActivity.this, "Í¬ÐÐÕßÓïÒôÎ´³õÊ¼»¯",
+						Toast.makeText(MainTestActivity.this, "Í¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î´ï¿½ï¿½Ê¼ï¿½ï¿½",
 								Toast.LENGTH_SHORT).show();
 					}
 				} catch (Exception e) {
@@ -316,7 +353,7 @@ public class MainTestActivity extends BaseActivity implements OnClickListener{
 				Intent intent = new Intent();
 				intent.setAction(ACTION_VOICHELPER);
 				MainTestActivity.this.sendBroadcast(intent);
-				Toast.makeText(MainTestActivity.this, "Í¬ÐÐÕßÓïÒôÖ¸Áî·¢ËÍ", Toast.LENGTH_SHORT).show();
+				Toast.makeText(MainTestActivity.this, "Í¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½î·¢ï¿½ï¿½", Toast.LENGTH_SHORT).show();
 			}
 			
 		});
@@ -469,6 +506,13 @@ public class MainTestActivity extends BaseActivity implements OnClickListener{
             
 		case R.id.btn_afile_system:
 		    startActivity(new Intent(MainTestActivity.this,AndroidFileSystemTest.class));
+		    File dir12=Environment.getExternalStorageDirectory();  
+		      if(dir12!=null){
+		    	  Log.e("RituNavi","Environment.getExternalStorageDirectory()="+dir12.toString()); 
+		      }else{
+		    	  Log.e("RituNavi","Environment.getExternalStorageDirectory()=null"); 
+		      }
+		      
             break;
             
 		case R.id.btn_window_params:
@@ -486,6 +530,45 @@ public class MainTestActivity extends BaseActivity implements OnClickListener{
 		case R.id.btn_draw_view:
 		    startActivity(new Intent(MainTestActivity.this,CanvasActivity.class));
 		    break;
+		    
+		case R.id.scroll_position:
+		    startActivity(new Intent(MainTestActivity.this,ScrollPositionActivity.class));
+		    break;
+		    
+		case R.id.btn_pause_music:
+//		    pauseMusic();
+		    sendMediaButton(getApplicationContext(),KeyEvent.KEYCODE_MEDIA_STOP );
+		    break;
+		    
+		case R.id.btn_custom_widget:
+		    startActivity(new Intent(MainTestActivity.this,CustomWidgetActivity.class));
+            break;
+            
+		case R.id.switch_on_txz:
+		    Intent intent3= new Intent();
+            intent3.setAction("android.intent.action.ACC_ON");
+            sendBroadcast(intent3);
+            break;
+            
+		case R.id.switch_off_txz:
+		    Intent intent4= new Intent();
+            intent4.setAction("android.intent.action.ACC_OVER");
+            sendBroadcast(intent4);
+            break;
+            
+		case R.id.btn_context_menu:
+            Intent intent5= new Intent();
+            intent5.setAction("com.android.action.DDT_SWIPE_FROM_LEFT");
+            intent5.addFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES);
+            sendBroadcast(intent5);
+            break;
+            
+		case R.id.btn_swipe_list:
+            startActivity(new Intent(MainTestActivity.this,SwipeListViewActivity.class));
+            break;
+		case R.id.btn_drag_view:
+		    startActivity(new Intent(MainTestActivity.this,DragViewActivity.class));
+		    break;
             
         default:
 			break;
@@ -494,21 +577,47 @@ public class MainTestActivity extends BaseActivity implements OnClickListener{
 	private ArrayList<BtContact> getBtContact(){
 	    ArrayList<BtContact> lst = new ArrayList<BtContact>();
 	    BtContact con = new BtContact();
-	    con.setName("ÕÅÈý");
+	    con.setName("ï¿½ï¿½ï¿½ï¿½");
         con.setNumber("30001");
         lst.add(con);
         con = new BtContact();
-        con.setName("ÕÅÈý");
+        con.setName("ï¿½ï¿½ï¿½ï¿½");
         con.setNumber("30002");
         lst.add(con);
         con = new BtContact();
-        con.setName("ÕÅÈý");
+        con.setName("ï¿½ï¿½ï¿½ï¿½");
         con.setNumber("30003");
         lst.add(con);
         con = new BtContact();
-        con.setName("ÕÂÈý");
+        con.setName("ï¿½ï¿½ï¿½ï¿½");
         con.setNumber("30100");
         lst.add(con);
         return lst;
 	}
+	
+	private void pauseMusic(){
+	    Intent freshIntent = new Intent();  
+	    freshIntent.setAction("com.android.music.musicservicecommand.pause");  
+	    freshIntent.putExtra("command", "pause");  
+	    sendBroadcast(freshIntent);  
+	    LogUtil.d("com.android.music.musicservicecommand.pause");
+	}
+	
+	public static void sendMediaButton(Context context, int keyCode) { 
+	    AudioManager audioManager= (AudioManager) context.getSystemService(Context.AUDIO_SERVICE); 
+	    //ï¿½ï¿½ï¿½Ð¶Ïºï¿½Ì¨ï¿½Ç·ï¿½ï¿½Ù²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+	    if (audioManager.isMusicActive()){ 
+	    KeyEvent keyEvent = new KeyEvent(KeyEvent.ACTION_DOWN, keyCode); 
+	    Intent intent = new Intent(Intent.ACTION_MEDIA_BUTTON); 
+	    intent.putExtra(Intent.EXTRA_KEY_EVENT, keyEvent); 
+	    context.sendOrderedBroadcast(intent,null);
+	    LogUtil.d("sendMediaButton0 KeyEvent.KEYCODE_MEDIA_STOP");
+	    keyEvent = new KeyEvent(KeyEvent.ACTION_UP, keyCode);
+        intent = new Intent(Intent.ACTION_MEDIA_BUTTON);
+        intent.putExtra(Intent.EXTRA_KEY_EVENT, keyEvent);
+        context.sendOrderedBroadcast(intent,null);
+        LogUtil.d("sendMediaButton1 KeyEvent.KEYCODE_MEDIA_STOP");
+	    }
+	}	   	
+	
 }

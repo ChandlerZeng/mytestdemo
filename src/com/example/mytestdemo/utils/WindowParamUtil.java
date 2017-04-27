@@ -1,7 +1,7 @@
 package com.example.mytestdemo.utils;
 
 import android.app.Activity;
-import android.content.Context;
+import android.graphics.Rect;
 import android.util.DisplayMetrics;
 
 /**
@@ -21,6 +21,24 @@ public class WindowParamUtil {
         DisplayMetrics metrics = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getMetrics(metrics);
         return metrics.heightPixels;
+    }
+    
+    public static int getStatusBarHeight(Activity activity){
+        Rect frame = new Rect();  
+        activity.getWindow().getDecorView().getWindowVisibleDisplayFrame(frame);  
+        int statusBarHeight = frame.top;        
+        return statusBarHeight;
+    }
+    
+    public static int getActionBarHeight(Activity activity){
+        int actionBarHeight = activity.getActionBar().getHeight(); 
+        return actionBarHeight;
+        
+    }
+    
+    public static int getContentViewHeight(Activity activity){
+        int contentHeight = getWindowHeight(activity)-getStatusBarHeight(activity)-getActionBarHeight(activity);
+        return contentHeight;
     }
     
 }

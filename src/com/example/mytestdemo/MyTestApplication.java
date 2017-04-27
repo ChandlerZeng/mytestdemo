@@ -6,6 +6,7 @@ import com.example.mytestdemo.utils.LogcatHelper;
 
 import android.app.Application;
 import android.content.ComponentCallbacks;
+import android.util.DisplayMetrics;
 import android.util.Log;
 
 /**
@@ -25,7 +26,8 @@ public class MyTestApplication extends Application{
 		TXZTestInterface.getInstance().Init(this);
 		LogUtil.setContext(this);
 		LogcatHelper.getInstance(this).start();
-		Log.d("RituNavi", "MyTestApplication onCreate");
+		Log.d("RituNavi", "MyTestApplication onCreate");		
+
 	}
 
 	@Override

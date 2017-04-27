@@ -186,6 +186,67 @@
                 android:text="Draw" />
 
         </LinearLayout>
+        
+         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/scroll_position"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Scroll" />
+
+            <Button
+                android:id="@+id/btn_pause_music"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pause" />
+
+            <Button
+                android:id="@+id/btn_custom_widget"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CusWg" />
+
+            <Button
+                android:id="@+id/btn_swipe_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="swipe" />
+
+        </LinearLayout>
+         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/switch_on_txz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="开" />
+
+            <Button
+                android:id="@+id/switch_off_txz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="关" />
+
+            <Button
+                android:id="@+id/btn_context_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SMenu" />
+
+            <Button
+                android:id="@+id/btn_drag_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Drag" />
+
+        </LinearLayout>
     </LinearLayout>
 
 </ScrollView>

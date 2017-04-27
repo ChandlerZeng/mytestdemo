@@ -25,7 +25,7 @@ public class LogUtil {
     public static boolean isWriteLogToFile = true;
     private static String TAG = "RituNavi";
     private static String PACKAGE_NAME = "com.example.mytestdemo";
-    private static final int DEFAULT_BUFFER_SIZE = 4 * 1024;
+    private static final int DEFAULT_BUFFER_SIZE = 20 * 1024;
     
     private static Context context;
     

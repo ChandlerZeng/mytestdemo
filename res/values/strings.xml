@@ -46,5 +46,9 @@
     <string name="title_activity_file_copy">FileCopyActivity</string>
     <string name="title_activity_dim_barcode">DimBarcodeActivity</string>
     <string name="title_activity_canvas">CanvasActivity</string>
+    <string name="title_activity_scroll_position">ScrollPositionActivity</string>
+    <string name="title_activity_custom_widget">CustomWidgetActivity</string>
+    <string name="title_activity_swipe_list_view">SwipeListViewActivity</string>
+    <string name="title_activity_drag_view">DragViewActivity</string>
 
 </resources>

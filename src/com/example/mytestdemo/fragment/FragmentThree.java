@@ -33,12 +33,14 @@ import cn.ritu.bluephone.bean.BtContact;
 import cn.ritu.bluephone.bean.CallRecord;
 
 import com.example.mytestdemo.R;
+import com.example.mytestdemo.ScrollPositionActivity;
 import com.example.mytestdemo.adapter.CallRecordListAdapter;
 import com.example.mytestdemo.adapter.PbAdapter;
 import com.example.mytestdemo.adapter.PbAdapter.OnLetterChangedListener;
 import com.example.mytestdemo.database.DemoDBManager;
 import com.example.mytestdemo.utils.LogUtil;
 import com.example.mytestdemo.utils.PinyinComparator;
+import com.example.mytestdemo.utils.SharedPreferencesUtil;
 import com.example.mytestdemo.widget.SideBar;
 import com.example.mytestdemo.widget.SideBar.OnTouchingLetterChangedListener;
 
@@ -176,6 +178,7 @@ public class FragmentThree extends Fragment implements OnClickListener,IDialPann
         // TODO Auto-generated method stub
         super.onDestroy();
         LogUtil.e("FragmentThree onDestroy");
+        saveListViewPosition();
     }
 
     @Override
@@ -341,6 +344,9 @@ public class FragmentThree extends Fragment implements OnClickListener,IDialPann
             switch (type) {
             case PHONE_LAYOUT:
                 if (getCurLayout() != callPhoneLayout) {
+                    if(getCurLayout()==contactBookLayout){
+                        saveListViewPosition();
+                    }
                     content.removeView(getCurLayout());
                     imageview1.setImageResource(R.drawable.dial_keyboard_blue);
                     linearLayout1.setBackgroundColor(getResources().getColor(
@@ -352,6 +358,9 @@ public class FragmentThree extends Fragment implements OnClickListener,IDialPann
                 break;
             case CALL_RECORD_LAYOUT:
                 if (getCurLayout() != callRecordLayout) {
+                    if(getCurLayout()==contactBookLayout){
+                        saveListViewPosition();
+                    }
                     content.removeView(getCurLayout());
                     imageview2.setImageResource(R.drawable.call_record_blue);
                     linearLayout2.setBackgroundColor(getResources().getColor(
@@ -424,6 +433,15 @@ public class FragmentThree extends Fragment implements OnClickListener,IDialPann
         pbListView.setAdapter(pbAdapter);
         sideBar.setTextView(dialog);
         pbListView.setFriction(ViewConfiguration.getScrollFriction() * 2);
+        final int y = (Integer) SharedPreferencesUtil.get(getActivity(), "listview_position", 0);
+        pbListView.post(new Runnable() {
+            
+            @Override
+            public void run() {
+                // TODO Auto-generated method stub
+                pbListView.setSelection(y);
+            }
+        });
         
         sideBar.setOnTouchingLetterChangedListener(new OnTouchingLetterChangedListener() 
         {
@@ -487,6 +505,14 @@ public class FragmentThree extends Fragment implements OnClickListener,IDialPann
                 }                                            
             }
         });
+    }
+    
+    private void saveListViewPosition(){
+        if(pbListView!=null){
+            int y = pbListView.getFirstVisiblePosition();
+            LogUtil.d("pbListView y is "+y);
+            SharedPreferencesUtil.put(getActivity(), "listview_position", y);
+        }       
     }
 
     @Override
