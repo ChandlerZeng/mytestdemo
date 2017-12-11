@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string-array name="maps">
         <item>道道通导航</item>
         <item>百度导航</item>
@@ -9,4 +10,72 @@
         <item>高德地图</item>
         <item>高德地图CAR</item>
     </string-array>
+    <string-array name="toasts">
+        <item>越狱好好看啊~</item>
+        <item>男主好帅！！！</item>
+        <item>期待下一季</item>
+        <item>T-BAG简直无敌啊~</item>
+        <item>我还是比较喜欢James</item>
+        <item>干死勇士</item>
+        <item>骑士必须冠军啊</item>
+        <item>Lebron才是历史最佳</item>
+        <item>我还是比较喜欢James</item>
+        <item>楼上兄弟你走错场了吧</item>
+        <item>这脑残粉啊</item>
+        <item>无语哦</item>
+        <item>还是第一季最好看~~</item>
+        <item>路过666</item>
+        <item>俺是来打酱油的</item>
+        <item>你们一个个不害臊吗</item>
+        <item>快点吧哥</item>
+        <item>打朝鲜我捐一条命</item>
+        <item>川普哥靠谱啊</item>
+        <item>奥巴马已哭晕在厕所</item>
+        <item>哈哈哈哈</item>
+        <item>哈哈哈呵呵额，傻叉</item>
+        <item>你牛你上啊</item>
+        <item>no zuo no die</item>
+        <item>no can no bb</item>
+        <item>没图你说过jb</item>
+        <item>测试人员真是蠢</item>
+        <item>岑吊更是让人无语哦</item>
+        <item>今天的日子真好</item>
+        <item>又星期五咯</item>
+        <item>一个星期过得真快</item>
+        <item>好吧你赢了</item>
+        <item>这样的问题都能被你发现</item>
+        <item>这尼玛太诡异了</item>
+        <item>都散了吧!</item>
+        <item>最新消息，骑士4-0干掉猛龙</item>
+        <item>老詹真牛啊</item>
+        <item>骑士威武，我大詹皇无敌</item>
+        <item>期待骑士总决赛干掉勇士</item>
+        <item>必须的！！</item>
+        <item>火星救援很好看哦，强烈推荐！！！</item>
+        <item>男主帅的掉渣外，也没什么嘛</item>
+        <item>星际穿越真的很不错</item>
+        <item>五维空间超出想象啊</item>
+        <item>未来人类探索宇宙，终会揭开宇宙神秘面纱的~</item>
+        <item>你说的对！</item>
+        <item>很好哦</item>
+        <item>好莱坞就是牛逼啊</item>
+        <item>其实是美国这样的国家牛逼</item>
+        <item>好好奋斗，争取移民美利坚啊</item>
+        <item>拆哪是没有希望了</item>
+        <item>被共匪给污染了</item>
+        <item>苟利国家生死以，岂因祸福避趋之</item>
+        <item>大姚不错的</item>
+        <item>姚明就是个傻逼</item>
+        <item>去他妈的gcd</item>
+        <item>去他妈的马克思</item>
+        <item>fuck everyone!</item>
+        <item>说多了小心被和谐</item>
+        <item>楼上收快递了</item>
+        <item>尼玛吓死爹了</item>
+        <item>赶紧来杯40年的二锅头压压惊</item>
+        <item>不说了，说多了都是泪</item>
+        <item>好了这是最后一条~~</item>
+        <item>重新开始咯</item>
+    </string-array>
+
 </resources>

@@ -26,7 +26,8 @@ public class LogUtil {
     private static String TAG = "RituNavi";
     private static String PACKAGE_NAME = "com.example.mytestdemo";
     private static final int DEFAULT_BUFFER_SIZE = 20 * 1024;
-    
+    String SDPATH = Environment.getExternalStorageDirectory().getPath() + "//";
+    File f = new File(SDPATH +"/Manual/test.pdf");
     private static Context context;
     
     public static void setContext(Context context){

@@ -1,0 +1,125 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/btn_show"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="showFunToast" />
+    
+    <Button
+        android:id="@+id/btn_show1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="showToast1" />
+    
+    <Button
+        android:visibility="gone"
+        android:id="@+id/btn_show2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="showToast2" />
+    
+    <Button
+        android:visibility="gone"
+        android:id="@+id/btn_show3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="showToast3" />
+    
+    <Button
+        android:id="@+id/btn_shows"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="showToasts" />
+    
+    <Button
+        android:id="@+id/btn_dismiss"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="dismissToast" />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/toast_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/round_textview"
+        android:text="@string/hello_world"
+        android:textColor="@color/white" />
+    
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/msg_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/round_textview"
+        android:text="@string/hello_world"
+        android:textColor="@color/white" />
+    
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/toast_text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:background="@drawable/round_textview"
+        android:text="@string/hello_world"
+        android:textColor="@color/white" />
+    
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/toast_text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:background="@drawable/round_textview"
+        android:text="@string/hello_world"
+        android:textColor="@color/white" />
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/toast_text3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:background="@drawable/round_textview"
+        android:text="@string/hello_world"
+        android:textColor="@color/white" />
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/toast_text4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:background="@drawable/round_textview"
+        android:text="@string/hello_world"
+        android:textColor="@color/white" />
+    <TextSwitcher
+        android:visibility="gone"
+        android:id="@+id/text_switcher1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_margin="5dp"
+        android:background="@drawable/round_textview" />
+     <TextSwitcher
+        android:visibility="gone"
+        android:id="@+id/text_switcher2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_margin="5dp"
+        android:background="@drawable/round_textview" />
+
+</LinearLayout>

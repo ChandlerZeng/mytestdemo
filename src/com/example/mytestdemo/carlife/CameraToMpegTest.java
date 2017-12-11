@@ -16,6 +16,7 @@
 
 package com.example.mytestdemo.carlife;
 
+import android.annotation.SuppressLint;
 import android.graphics.SurfaceTexture;
 import android.hardware.Camera;
 import android.media.MediaCodec;
@@ -35,7 +36,6 @@ import android.os.Environment;
 import android.test.AndroidTestCase;
 import android.util.Log;
 import android.view.Surface;
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -65,7 +65,7 @@ import java.nio.FloatBuffer;
  * (This was derived from bits and pieces of CTS tests, and is packaged as such, but is not
  * currently part of CTS.)
  */
-public class CameraToMpegTest extends AndroidTestCase {
+@SuppressLint("NewApi") public class CameraToMpegTest extends AndroidTestCase {
     private static final String TAG = "CameraToMpegTest";
     private static final boolean VERBOSE = false;           // lots of logging
 
@@ -349,7 +349,12 @@ public class CameraToMpegTest extends AndroidTestCase {
         // you will likely want to defer instantiation of CodecInputSurface until after the
         // "display" EGL context is created, then modify the eglCreateContext call to
         // take eglGetCurrentContext() as the share_context argument.
-        mEncoder = MediaCodec.createEncoderByType(MIME_TYPE);
+        try {
+			mEncoder = MediaCodec.createEncoderByType(MIME_TYPE);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         mEncoder.configure(format, null, null, MediaCodec.CONFIGURE_FLAG_ENCODE);
         mInputSurface = new CodecInputSurface(mEncoder.createInputSurface());
         mEncoder.start();

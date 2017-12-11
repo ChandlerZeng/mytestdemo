@@ -1,14 +1,14 @@
-package com.example.mytestdemo.javatest.javamode.behaviortype;
+ï»¿package com.example.mytestdemo.javatest.javamode.behaviortype;
 /**
  * @author Zengcq
- * @date 2016Äê12ÔÂ14ÈÕ
+ * @date 2016å¹´12æœˆ14æ—¥
  * @version 1.0
  * @description
- * ½âÊÍÒ»ÏÂÄ£°å·½·¨Ä£Ê½£¬¾ÍÊÇÖ¸£ºÒ»¸ö³éÏóÀàÖĞ£¬ÓĞÒ»¸öÖ÷·½·¨£¬ÔÙ¶¨Òå1...n¸ö·½·¨£¬¿ÉÒÔÊÇ³éÏóµÄ£¬Ò²¿ÉÒÔÊÇÊµ¼ÊµÄ·½·¨£¬
- * ¶¨ÒåÒ»¸öÀà£¬¼Ì³Ğ¸Ã³éÏóÀà£¬ÖØĞ´³éÏó·½·¨£¬Í¨¹ıµ÷ÓÃ³éÏóÀà£¬ÊµÏÖ¶Ô×ÓÀàµÄµ÷ÓÃ
- * ¾ÍÊÇÔÚAbstractCalculatorÀàÖĞ¶¨ÒåÒ»¸öÖ÷·½·¨calculate£¬calculate()µ÷ÓÃspilt()µÈ£¬
- * PlusºÍMinus·Ö±ğ¼Ì³ĞAbstractCalculatorÀà£¬
- * Í¨¹ı¶ÔAbstractCalculatorµÄµ÷ÓÃÊµÏÖ¶Ô×ÓÀàµÄµ÷ÓÃ
+ * è§£é‡Šä¸€ä¸‹æ¨¡æ¿æ–¹æ³•æ¨¡å¼ï¼Œå°±æ˜¯æŒ‡ï¼šä¸€ä¸ªæŠ½è±¡ç±»ä¸­ï¼Œæœ‰ä¸€ä¸ªä¸»æ–¹æ³•ï¼Œå†å®šä¹‰1...nä¸ªæ–¹æ³•ï¼Œå¯ä»¥æ˜¯æŠ½è±¡çš„ï¼Œä¹Ÿå¯ä»¥æ˜¯å®é™…çš„æ–¹æ³•ï¼Œ
+ * å®šä¹‰ä¸€ä¸ªç±»ï¼Œç»§æ‰¿è¯¥æŠ½è±¡ç±»ï¼Œé‡å†™æŠ½è±¡æ–¹æ³•ï¼Œé€šè¿‡è°ƒç”¨æŠ½è±¡ç±»ï¼Œå®ç°å¯¹å­ç±»çš„è°ƒç”¨
+ * å°±æ˜¯åœ¨AbstractCalculatorç±»ä¸­å®šä¹‰ä¸€ä¸ªä¸»æ–¹æ³•calculateï¼Œcalculate()è°ƒç”¨spilt()ç­‰ï¼Œ
+ * Pluså’ŒMinusåˆ†åˆ«ç»§æ‰¿AbstractCalculatorç±»ï¼Œ
+ * é€šè¿‡å¯¹AbstractCalculatorçš„è°ƒç”¨å®ç°å¯¹å­ç±»çš„è°ƒç”¨
  */
 public class TemplateMode {
 
@@ -26,13 +26,13 @@ public class TemplateMode {
 
 abstract class AbstractCalculator2 {  
     
-    /*Ö÷·½·¨£¬ÊµÏÖ¶Ô±¾ÀàÆäËü·½·¨µÄµ÷ÓÃ*/  
+    /*ä¸»æ–¹æ³•ï¼Œå®ç°å¯¹æœ¬ç±»å…¶å®ƒæ–¹æ³•çš„è°ƒç”¨*/  
     public final int calculate(String exp,String opt){  
         int array[] = split(exp,opt);  
         return calculate(array[0],array[1]);  
     }  
       
-    /*±»×ÓÀàÖØĞ´µÄ·½·¨*/  
+    /*è¢«å­ç±»é‡å†™çš„æ–¹æ³•*/  
     abstract public int calculate(int num1,int num2);  
       
     public int[] split(String exp,String opt){  
@@ -52,10 +52,10 @@ class Plus2 extends AbstractCalculator2 {
     }  
 }  
 /*
- * ÎÒ¸ú×ÙÏÂÕâ¸öĞ¡³ÌĞòµÄÖ´ĞĞ¹ı³Ì£ºÊ×ÏÈ½«expºÍ"\\+"×ö²ÎÊı£¬
- * µ÷ÓÃAbstractCalculatorÀàÀïµÄcalculate(String,String)·½·¨£¬
- * ÔÚcalculate(String,String)Àïµ÷ÓÃÍ¬ÀàµÄsplit()£¬Ö®ºóÔÙµ÷ÓÃcalculate(int ,int)·½·¨£¬´ÓÕâ¸ö·½·¨½øÈëµ½×ÓÀàÖĞ£¬
- * Ö´ĞĞÍêreturn num1 + num2ºó£¬
- * ½«Öµ·µ»Øµ½AbstractCalculatorÀà£¬¸³¸øresult£¬´òÓ¡³öÀ´¡£ÕıºÃÑéÖ¤ÁËÎÒÃÇ¿ªÍ·µÄË¼Â·¡£
+ * æˆ‘è·Ÿè¸ªä¸‹è¿™ä¸ªå°ç¨‹åºçš„æ‰§è¡Œè¿‡ç¨‹ï¼šé¦–å…ˆå°†expå’Œ"\\+"åšå‚æ•°ï¼Œ
+ * è°ƒç”¨AbstractCalculatorç±»é‡Œçš„calculate(String,String)æ–¹æ³•ï¼Œ
+ * åœ¨calculate(String,String)é‡Œè°ƒç”¨åŒç±»çš„split()ï¼Œä¹‹åå†è°ƒç”¨calculate(int ,int)æ–¹æ³•ï¼Œä»è¿™ä¸ªæ–¹æ³•è¿›å…¥åˆ°å­ç±»ä¸­ï¼Œ
+ * æ‰§è¡Œå®Œreturn num1 + num2åï¼Œ
+ * å°†å€¼è¿”å›åˆ°AbstractCalculatorç±»ï¼Œèµ‹ç»™resultï¼Œæ‰“å°å‡ºæ¥ã€‚æ­£å¥½éªŒè¯äº†æˆ‘ä»¬å¼€å¤´çš„æ€è·¯ã€‚
  */
 

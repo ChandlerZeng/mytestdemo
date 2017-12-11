@@ -24,20 +24,30 @@ import android.widget.Spinner;
 import android.widget.Toast;
 import cn.ritu.bluephone.bean.BtContact;
 
+import com.example.mytestdemo.AidlActivity;
+import com.example.mytestdemo.AudioManagerTestActivity;
 import com.example.mytestdemo.CanvasActivity;
 import com.example.mytestdemo.CustomWidgetActivity;
 import com.example.mytestdemo.DimBarcodeActivity;
 import com.example.mytestdemo.DragViewActivity;
 import com.example.mytestdemo.FileCopyActivity;
+import com.example.mytestdemo.HandlerActivity;
+import com.example.mytestdemo.HomeLockActivity;
 import com.example.mytestdemo.MyTestApplication;
 import com.example.mytestdemo.R;
+import com.example.mytestdemo.RecordTestActivity;
+import com.example.mytestdemo.ScrollClickActivity;
 import com.example.mytestdemo.ScrollPositionActivity;
+import com.example.mytestdemo.SeekBarTestActivity;
 import com.example.mytestdemo.SwipeListViewActivity;
 import com.example.mytestdemo.WindowParamsActivity;
 import com.example.mytestdemo.activity.AndroidFileSystemTest;
 import com.example.mytestdemo.activity.ContentProviderActivity;
 import com.example.mytestdemo.activity.DBUtilActivity;
 import com.example.mytestdemo.activity.FileTestActivity;
+import com.example.mytestdemo.activity.FullscreenActivity;
+import com.example.mytestdemo.activity.ItemDetailActivity;
+import com.example.mytestdemo.activity.LoginActivity;
 import com.example.mytestdemo.activity.RandomIdsActivity;
 import com.example.mytestdemo.activity.SPUtilActivity;
 import com.example.mytestdemo.base.BaseActivity;
@@ -51,6 +61,7 @@ import com.example.mytestdemo.txz.TXZNaviSettingReceiver;
 import com.example.mytestdemo.txz.TXZTestInterface;
 import com.example.mytestdemo.utils.LogUtil;
 import com.example.mytestdemo.utils.LogcatHelper;
+import com.example.mytestdemo.utils.MyToast;
 import com.example.mytestdemo.widget.SwipeListView;
 import com.txznet.sdk.TXZConfigManager;
 import com.txznet.sdk.TXZPowerManager;
@@ -102,6 +113,17 @@ public class MainTestActivity extends BaseActivity implements OnClickListener{
 	private Button btnContextMenu;
 	private Button btnSwipeList;
 	private Button btnDragView;
+	private Button btnSeekbar;
+	private Button btnHandler;
+	private Button btnScrollClick;
+	private Button btnAidl;
+	private Button btnRecord;
+	private Button btnLogin;
+	private Button btnNav;
+	private Button btnItem;
+	private Button btnFulls;
+	private Button btnHomeLock;
+	private Button btnAudioManager;
 	
 	private Spinner spinnerMap;
 
@@ -114,8 +136,9 @@ public class MainTestActivity extends BaseActivity implements OnClickListener{
 		init();
 		DisplayMetrics metric = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metric);
-        float density = metric.density;  // ÆÁÄ»ÃÜ¶È£¨0.75 / 1.0 / 1.5£©
+        float density = metric.density;  // ï¿½ï¿½Ä»ï¿½Ü¶È£ï¿½0.75 / 1.0 / 1.5ï¿½ï¿½
 		Log.d("RituNavi", "MainTestActivity onCreate");
+		MyToast.makeText(this, "MainTestActivity onCreate", MyToast.LENGTH_SHORT).show();
 	}
 	
 	
@@ -126,6 +149,7 @@ public class MainTestActivity extends BaseActivity implements OnClickListener{
 		super.onDestroy();
 		Log.d("RituNavi", "MainTestActivity onDestroy");
 		LogcatHelper.getInstance(getApplicationContext()).stop();
+		MyToast.makeText(this, "MainTestActivity onDestroy", MyToast.LENGTH_SHORT).show();
 	}
 
 
@@ -153,6 +177,7 @@ public class MainTestActivity extends BaseActivity implements OnClickListener{
 		// TODO Auto-generated method stub
 		super.onResume();
 		Log.d("RituNavi", "MainTestActivity onResume");
+		MyToast.makeText(this, "MainTestActivity onResume", MyToast.LENGTH_SHORT).show();
 	}
 
 
@@ -205,6 +230,17 @@ public class MainTestActivity extends BaseActivity implements OnClickListener{
 		btnContextMenu = (Button) findViewById(R.id.btn_context_menu);
 		btnSwipeList = (Button) findViewById(R.id.btn_swipe_list);
 		btnDragView = (Button) findViewById(R.id.btn_drag_view);
+		btnSeekbar = (Button) findViewById(R.id.btn_seekbar);
+		btnHandler = (Button) findViewById(R.id.btn_handler);
+		btnScrollClick = (Button) findViewById(R.id.btn_scroll_click);
+		btnAidl = (Button) findViewById(R.id.btn_aidl);
+		btnRecord = (Button) findViewById(R.id.btn_record);
+		btnItem = (Button) findViewById(R.id.btn_item);
+		btnFulls = (Button) findViewById(R.id.btn_fullscreen);
+		btnLogin = (Button) findViewById(R.id.btn_login);
+		btnNav = (Button) findViewById(R.id.btn_nav);
+		btnHomeLock = (Button) findViewById(R.id.btn_home_lock);
+		btnAudioManager = (Button) findViewById(R.id.btn_audio_manager);
 		
 		progressBar = (ProgressBar) findViewById(R.id.progressBar);
 		spinnerMap = (Spinner) findViewById(R.id.spinnerMap);
@@ -232,6 +268,17 @@ public class MainTestActivity extends BaseActivity implements OnClickListener{
 		btnContextMenu.setOnClickListener(this);
 		btnSwipeList.setOnClickListener(this);
 		btnDragView.setOnClickListener(this);
+		btnSeekbar.setOnClickListener(this);
+		btnHandler.setOnClickListener(this);
+		btnScrollClick.setOnClickListener(this);
+		btnAidl.setOnClickListener(this);
+		btnRecord.setOnClickListener(this);
+		btnItem.setOnClickListener(this);
+		btnFulls.setOnClickListener(this);
+		btnNav.setOnClickListener(this);
+		btnLogin.setOnClickListener(this);
+		btnHomeLock.setOnClickListener(this);
+		btnAudioManager.setOnClickListener(this);
 
 		spinnerMap.setSelection(getSelectedMap());
 //		NaviToolInterface.getInstance().setMaps(getSelectedMap());
@@ -569,6 +616,50 @@ public class MainTestActivity extends BaseActivity implements OnClickListener{
 		case R.id.btn_drag_view:
 		    startActivity(new Intent(MainTestActivity.this,DragViewActivity.class));
 		    break;
+		    
+		case R.id.btn_seekbar:
+		    startActivity(new Intent(MainTestActivity.this,SeekBarTestActivity.class));
+		    break;
+		    
+		case R.id.btn_handler:
+            startActivity(new Intent(MainTestActivity.this,HandlerActivity.class));
+            break;
+            
+		case R.id.btn_scroll_click:
+            startActivity(new Intent(MainTestActivity.this,ScrollClickActivity.class));
+            break;
+            
+		case R.id.btn_aidl:
+            startActivity(new Intent(MainTestActivity.this,AidlActivity.class));
+            break;
+            
+		case R.id.btn_record:
+            startActivity(new Intent(MainTestActivity.this,RecordTestActivity.class));
+            break;
+            
+		case R.id.btn_login:
+            startActivity(new Intent(MainTestActivity.this,LoginActivity.class));
+            break;
+            
+		case R.id.btn_fullscreen:
+            startActivity(new Intent(MainTestActivity.this,FullscreenActivity.class));
+            break;
+            
+		case R.id.btn_nav:
+
+            break;
+            
+		case R.id.btn_item:
+            startActivity(new Intent(MainTestActivity.this,ItemDetailActivity.class));
+            break;
+            
+		case R.id.btn_home_lock:
+            startActivity(new Intent(MainTestActivity.this,HomeLockActivity.class));
+            break;
+            
+		case R.id.btn_audio_manager:
+            startActivity(new Intent(MainTestActivity.this,AudioManagerTestActivity.class));
+            break;
             
         default:
 			break;

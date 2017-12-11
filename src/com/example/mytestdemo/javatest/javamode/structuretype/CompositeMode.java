@@ -1,14 +1,14 @@
-package com.example.mytestdemo.javatest.javamode.structuretype;
+ï»¿package com.example.mytestdemo.javatest.javamode.structuretype;
 
 import java.util.Enumeration;
 import java.util.Vector;
 
 /**
  * @author Zengcq
- * @date 2016Äê12ÔÂ14ÈÕ
+ * @date 2016å¹´12æœˆ14æ—¥
  * @version 1.0
  * @description
- * ×éºÏÄ£Ê½ÓĞÊ±ÓÖ½Ğ²¿·Ö-ÕûÌåÄ£Ê½ÔÚ´¦ÀíÀàËÆÊ÷ĞÎ½á¹¹µÄÎÊÌâÊ±±È½Ï·½±ã
+ * ç»„åˆæ¨¡å¼æœ‰æ—¶åˆå«éƒ¨åˆ†-æ•´ä½“æ¨¡å¼åœ¨å¤„ç†ç±»ä¼¼æ ‘å½¢ç»“æ„çš„é—®é¢˜æ—¶æ¯”è¾ƒæ–¹ä¾¿
  */
 public class CompositeMode {
 	TreeNode root = null;  
@@ -54,17 +54,17 @@ class TreeNode {
         this.parent = parent;  
     }  
       
-    //Ìí¼Óº¢×Ó½Úµã  
+    //æ·»åŠ å­©å­èŠ‚ç‚¹  
     public void add(TreeNode node){  
         children.add(node);  
     }  
       
-    //É¾³ıº¢×Ó½Úµã  
+    //åˆ é™¤å­©å­èŠ‚ç‚¹  
     public void remove(TreeNode node){  
         children.remove(node);  
     }  
       
-    //È¡µÃº¢×Ó½Úµã  
+    //å–å¾—å­©å­èŠ‚ç‚¹  
     public Enumeration<TreeNode> getChildren(){  
         return children.elements();  
     }  

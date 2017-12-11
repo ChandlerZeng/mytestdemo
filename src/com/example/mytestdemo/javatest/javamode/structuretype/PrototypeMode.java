@@ -1,4 +1,4 @@
-package com.example.mytestdemo.javatest.javamode.structuretype;
+ï»¿package com.example.mytestdemo.javatest.javamode.structuretype;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -9,9 +9,9 @@ import java.io.Serializable;
 
 /**
  * @author Zengcq
- * @date 2016Äê12ÔÂ14ÈÕ
+ * @date 2016å¹´12æœˆ14æ—¥
  * @version 1.0
- * @description Ô­ĞÍÄ£Ê½
+ * @description åŸå‹æ¨¡å¼
  */
 public class PrototypeMode implements Cloneable, Serializable{
 
@@ -25,21 +25,21 @@ public class PrototypeMode implements Cloneable, Serializable{
 	  
 	    private SerializableObject obj;  
 	  
-	    /* Ç³¸´ÖÆ */  
+	    /* æµ…å¤åˆ¶ */  
 	    public Object clone() throws CloneNotSupportedException {  
 	    	PrototypeMode proto = (PrototypeMode) super.clone();  
 	        return proto;  
 	    }  
 	  
-	    /* Éî¸´ÖÆ */  
+	    /* æ·±å¤åˆ¶ */  
 	    public Object deepClone() throws IOException, ClassNotFoundException {  
 	  
-	        /* Ğ´Èëµ±Ç°¶ÔÏóµÄ¶ş½øÖÆÁ÷ */  
+	        /* å†™å…¥å½“å‰å¯¹è±¡çš„äºŒè¿›åˆ¶æµ */  
 	        ByteArrayOutputStream bos = new ByteArrayOutputStream();  
 	        ObjectOutputStream oos = new ObjectOutputStream(bos);  
 	        oos.writeObject(this);  
 	  
-	        /* ¶Á³ö¶ş½øÖÆÁ÷²úÉúµÄĞÂ¶ÔÏó */  
+	        /* è¯»å‡ºäºŒè¿›åˆ¶æµäº§ç”Ÿçš„æ–°å¯¹è±¡ */  
 	        ByteArrayInputStream bis = new ByteArrayInputStream(bos.toByteArray());  
 	        ObjectInputStream ois = new ObjectInputStream(bis);  
 	        return ois.readObject();  

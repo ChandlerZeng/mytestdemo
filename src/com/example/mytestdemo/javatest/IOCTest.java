@@ -3,16 +3,21 @@ package com.example.mytestdemo.javatest;
 
 /**
  * @author Zengcq
- * @date 2017Äê2ÔÂ20ÈÕ
+ * @date 2017ï¿½ï¿½2ï¿½ï¿½20ï¿½ï¿½
  * @version 1.0
  * @description
  */
 
-/******************** IOC¿ØÖÆ·´×ªºÍÒÀÀµ×¢Èë ***************************/
-//ÏÂÃæÊÇSpringµÄIOCÊµÏÖ£ºBean¹¤³§
+/******************** IOCï¿½ï¿½ï¿½Æ·ï¿½×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½ ***************************/
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Springï¿½ï¿½IOCÊµï¿½Ö£ï¿½Beanï¿½ï¿½ï¿½ï¿½
 public class IOCTest {
-//    ÏÂÃæ·Ö±ğÑİÊ¾3ÖĞ×¢Èë»úÖÆ¡£
-//    ´úÂë2 ´ı×¢ÈëµÄÒµÎñ¶ÔÏóContent.java
+//    ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ï¿½ï¿½Ê¾3ï¿½ï¿½×¢ï¿½ï¿½ï¿½ï¿½Æ¡ï¿½
+//    ï¿½ï¿½ï¿½ï¿½2 ï¿½ï¿½×¢ï¿½ï¿½ï¿½Òµï¿½ï¿½ï¿½ï¿½ï¿½Content.java
+	public static void main(String[] args){
+		MyBusiness business = new MyBusiness(new Content());
+		business.doBusiness();
+		business.doAnotherBusiness();
+	}
 
 }
 
@@ -27,11 +32,11 @@ class Content {
     }
 }
 
-//MyBusniessÀàÕ¹Ê¾ÁËÒ»¸öÒµÎñ×é¼ş£¬ËüµÄÊµÏÖĞèÒª¶ÔÏóContentµÄ×¢Èë¡£
-//´úÂë3£¬´úÂë4£¬´úÂë5£¬6·Ö±ğÑİÊ¾¹¹Ôì×Ó×¢Èë£¨Constructor Injection£©£¬
-//ÉèÖµ×¢Èë£¨Setter Injection£©ºÍ½Ó¿Ú×¢Èë£¨Interface Injection£©ÈıÖÖ·½Ê½¡£
+//MyBusniessï¿½ï¿½Õ¹Ê¾ï¿½ï¿½Ò»ï¿½ï¿½Òµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½Contentï¿½ï¿½×¢ï¿½ë¡£
+//ï¿½ï¿½ï¿½ï¿½3ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½4ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½5ï¿½ï¿½6ï¿½Ö±ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½ë£¨Constructor Injectionï¿½ï¿½ï¿½ï¿½
+//ï¿½ï¿½Öµ×¢ï¿½ë£¨Setter Injectionï¿½ï¿½ï¿½Í½Ó¿ï¿½×¢ï¿½ë£¨Interface Injectionï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½Ê½ï¿½ï¿½
 
-//´úÂë3¹¹Ôì×Ó×¢Èë£¨Constructor Injection£©MyBusiness.java
+//ï¿½ï¿½ï¿½ï¿½3ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½ë£¨Constructor Injectionï¿½ï¿½MyBusiness.java
 class MyBusiness {
     private Content myContent;
  
@@ -48,7 +53,7 @@ class MyBusiness {
     }
 }
 
-//´úÂë4ÉèÖµ×¢Èë£¨Setter Injection£© MyBusiness.java
+//ï¿½ï¿½ï¿½ï¿½4ï¿½ï¿½Öµ×¢ï¿½ë£¨Setter Injectionï¿½ï¿½ MyBusiness.java
 class MyBusiness2 {
     private Content myContent;
  
@@ -65,7 +70,7 @@ class MyBusiness2 {
     }
 }
 
-//´úÂë5½Ó¿Ú×¢Èë£¨Interface Injection£©MyBusiness.java
+//ï¿½ï¿½ï¿½ï¿½5ï¿½Ó¿ï¿½×¢ï¿½ë£¨Interface Injectionï¿½ï¿½MyBusiness.java
 interface InContent {
     void createContent(Content content);
 }

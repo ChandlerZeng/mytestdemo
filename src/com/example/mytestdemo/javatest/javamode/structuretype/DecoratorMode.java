@@ -1,11 +1,11 @@
-package com.example.mytestdemo.javatest.javamode.structuretype;
+ï»¿package com.example.mytestdemo.javatest.javamode.structuretype;
 /**
  * @author Zengcq
- * @date 2016Äê12ÔÂ14ÈÕ
+ * @date 2016å¹´12æœˆ14æ—¥
  * @version 1.0
  * @description
- * ¹ËÃûË¼Òå£¬×°ÊÎÄ£Ê½¾ÍÊÇ¸øÒ»¸ö¶ÔÏóÔö¼ÓÒ»Ğ©ĞÂµÄ¹¦ÄÜ£¬¶øÇÒÊÇ¶¯Ì¬µÄ£¬
- * ÒªÇó×°ÊÎ¶ÔÏóºÍ±»×°ÊÎ¶ÔÏóÊµÏÖÍ¬Ò»¸ö½Ó¿Ú£¬×°ÊÎ¶ÔÏó³ÖÓĞ±»×°ÊÎ¶ÔÏóµÄÊµÀı
+ * é¡¾åæ€ä¹‰ï¼Œè£…é¥°æ¨¡å¼å°±æ˜¯ç»™ä¸€ä¸ªå¯¹è±¡å¢åŠ ä¸€äº›æ–°çš„åŠŸèƒ½ï¼Œè€Œä¸”æ˜¯åŠ¨æ€çš„ï¼Œ
+ * è¦æ±‚è£…é¥°å¯¹è±¡å’Œè¢«è£…é¥°å¯¹è±¡å®ç°åŒä¸€ä¸ªæ¥å£ï¼Œè£…é¥°å¯¹è±¡æŒæœ‰è¢«è£…é¥°å¯¹è±¡çš„å®ä¾‹
  */
 public class DecoratorMode implements Sourceable2{
 

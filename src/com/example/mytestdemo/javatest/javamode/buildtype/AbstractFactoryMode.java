@@ -1,13 +1,13 @@
-package com.example.mytestdemo.javatest.javamode.buildtype;
+ï»¿package com.example.mytestdemo.javatest.javamode.buildtype;
 
 /**
  * @author Zengcq
- * @date 2016Äê12ÔÂ13ÈÕ
+ * @date 2016å¹´12æœˆ13æ—¥
  * @version 1.0
- * @description ³éÏó¹¤³§Ä£Ê½
- * ÆäÊµÕâ¸öÄ£Ê½µÄºÃ´¦¾ÍÊÇ£¬Èç¹ûÄãÏÖÔÚÏëÔö¼ÓÒ»¸ö¹¦ÄÜ£º·¢¼°Ê±ĞÅÏ¢£¬ÔòÖ»Ğè×öÒ»¸öÊµÏÖÀà£¬
- * ÊµÏÖSender½Ó¿Ú£¬Í¬Ê±×öÒ»¸ö¹¤³§Àà£¬ÊµÏÖProvider½Ó¿Ú£¬¾ÍOKÁË£¬
- * ÎŞĞèÈ¥¸Ä¶¯ÏÖ³ÉµÄ´úÂë¡£ÕâÑù×ö£¬ÍØÕ¹ĞÔ½ÏºÃ£¡
+ * @description æŠ½è±¡å·¥å‚æ¨¡å¼
+ * å…¶å®è¿™ä¸ªæ¨¡å¼çš„å¥½å¤„å°±æ˜¯ï¼Œå¦‚æœä½ ç°åœ¨æƒ³å¢åŠ ä¸€ä¸ªåŠŸèƒ½ï¼šå‘åŠæ—¶ä¿¡æ¯ï¼Œåˆ™åªéœ€åšä¸€ä¸ªå®ç°ç±»ï¼Œ
+ * å®ç°Senderæ¥å£ï¼ŒåŒæ—¶åšä¸€ä¸ªå·¥å‚ç±»ï¼Œå®ç°Provideræ¥å£ï¼Œå°±OKäº†ï¼Œ
+ * æ— éœ€å»æ”¹åŠ¨ç°æˆçš„ä»£ç ã€‚è¿™æ ·åšï¼Œæ‹“å±•æ€§è¾ƒå¥½ï¼
  */
 public class AbstractFactoryMode {
 	public static void main(String[] args) {
@@ -21,7 +21,7 @@ public class AbstractFactoryMode {
 		HumanFactory humanFactory = new HumanFactory();
 		Human human1 = humanFactory.getHuman("chinese");
 		Human human2 = humanFactory.getHuman("america");
-		human1.sayHelloWorld("µÏÀöÈÈ°Í");
+		human1.sayHelloWorld("è¿ªä¸½çƒ­å·´");
 		human2.sayHelloWorld("Chandler");
 	}
 }
@@ -123,7 +123,7 @@ class Chinese implements Human{
     @Override
     public void sayHelloWorld(String name) {
         // TODO Auto-generated method stub
-        String helloWorld = "ÄãºÃ£¬" + name;
+        String helloWorld = "ä½ å¥½ï¼Œ" + name;
         System.out.println(helloWorld); 
     }
     
@@ -134,7 +134,7 @@ class America implements Human{
     @Override
     public void sayHelloWorld(String name) {
         // TODO Auto-generated method stub
-        String helloWorld = "Hello£¬" + name;
+        String helloWorld = "Helloï¼Œ" + name;
         System.out.println(helloWorld);
     }
     

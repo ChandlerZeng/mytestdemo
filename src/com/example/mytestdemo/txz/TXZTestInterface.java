@@ -61,21 +61,21 @@ public class TXZTestInterface implements InitListener, ActiveListener {
     private boolean isActivited = false;
 
     public void Init(Context context) {
-        // »ñÈ¡½ÓÈë·ÖÅäµÄappIdºÍappToken
+        // ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½appIdï¿½ï¿½appToken
         m_context = context;
         String appId = context.getResources().getString(
                 R.string.txz_sdk_init_app_id);
         String appToken = context.getResources().getString(
                 R.string.txz_sdk_init_app_token);
-        // ÉèÖÃ³õÊ¼»¯²ÎÊý
+        // ï¿½ï¿½ï¿½Ã³ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         mInitParam = new InitParam(appId, appToken);
         String[] wakeupKeywords = context.getResources().getStringArray(
                 R.array.txz_sdk_init_wakeup_keywords);
         mInitParam.setWakeupKeywordsNew(wakeupKeywords);
-        mInitParam.setFloatToolType(FloatToolType.FLOAT_NONE);
-//        TXZConfigManager.getInstance().initialize(context, mInitParam, this,
-//                this);
-         TXZConfigManager.getInstance().initialize(context, this);
+//        mInitParam.setFloatToolType(FloatToolType.FLOAT_NONE);
+        TXZConfigManager.getInstance().initialize(context, mInitParam, this,
+                this);
+//         TXZConfigManager.getInstance().initialize(context, this);
         // TXZNavManager.getInstance().setNavTool(TXZNavManager.NavToolType.NAV_TOOL_BAIDU_MAP);
         /* cmdListenerStartNavi(); */
 //        cmdAllCommandListener();
@@ -94,20 +94,20 @@ public class TXZTestInterface implements InitListener, ActiveListener {
 
     @Override
     public void onError(int arg0, String arg1) {
-        // ³õÊ¼»¯³ö´í
+        // ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         MainTestActivity.dismissProgress();
-        Log.d("RituNavi", "Í¬ÐÐÕßÓïÒô³õÊ¼»¯Ê§°Ü");
+        Log.d("RituNavi", "Í¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ê§ï¿½ï¿½");
     }
 
     @Override
     public void onSuccess() {
-        // ³õÊ¼»¯³É¹¦
+        // ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½É¹ï¿½
         MainTestActivity.dismissProgress();
         if (TXZNaviSettingReceiver.isFirstInit) {
-            Log.d("RituNavi", "Í¬ÐÐÕßÓïÒô³õÊ¼»¯³É¹¦");
+            Log.d("RituNavi", "Í¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½É¹ï¿½");
             TXZNaviSettingReceiver.isFirstInit = false;
         }
-        // ÉèÖÃ»½ÐÑ·§Öµ
+        // ï¿½ï¿½ï¿½Ã»ï¿½ï¿½Ñ·ï¿½Öµ
         TXZConfigManager.getInstance().setWakeupThreshhold(-3.0f);
         LogUtil.d("TXZNaviSettingReceiver.isFirstInit:"
                 + TXZNaviSettingReceiver.isFirstInit);
@@ -116,9 +116,9 @@ public class TXZTestInterface implements InitListener, ActiveListener {
 
     @Override
     public void onFirstActived() {
-        // Ê×´ÎÁªÍø¼¤»î£¬Èç¹ûÐèÒª³ö³§¼¤»îÌáÊ¾£¬¿ÉÒÔÔÚÕâÀïÍê³É
+        // ï¿½×´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½î£¬ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         if (!isActivited) {
-            Log.d("RituNavi", "Í¬ÐÐÕßÓïÒô¼¤»î");
+            Log.d("RituNavi", "Í¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
             isActivited = true;
         }
         LogUtil.d("isActivited:" + isActivited);
@@ -206,8 +206,8 @@ public class TXZTestInterface implements InitListener, ActiveListener {
                             LogUtil.e("type:" + type + ",command:" + command);
                         }
                     }
-                }.addCommand("CMD_HOME", "»Øµ½×ÀÃæ", "·µ»Ø×ÀÃæ"));
-        LogUtil.e("RituNavi", "ÕýÔÚÎªÄú×¢²á»Øµ½×ÀÃæ»½ÐÑ´Ê");
+                }.addCommand("CMD_HOME", "ï¿½Øµï¿½ï¿½ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"));
+        LogUtil.e("RituNavi", "ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½×¢ï¿½ï¿½Øµï¿½ï¿½ï¿½ï¿½æ»½ï¿½Ñ´ï¿½");
     }
     
     private void asrListenerSreenOn() {
@@ -234,8 +234,8 @@ public class TXZTestInterface implements InitListener, ActiveListener {
                             ScreenControl.screenOn();
                         }
                     }
-                }.addCommand("CMD_SCREEN_ON", "´ò¿ªÆÁÄ»", "ÁÁÆðÆÁÄ»"));
-        LogUtil.e("RituNavi", "ÕýÔÚÎªÄú×¢²á´ò¿ªÆÁÄ»»½ÐÑ´Ê");
+                }.addCommand("CMD_SCREEN_ON", "ï¿½ï¿½ï¿½ï¿½Ä»", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä»"));
+        LogUtil.e("RituNavi", "ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½×¢ï¿½ï¿½ï¿½ï¿½ï¿½Ä»ï¿½ï¿½ï¿½Ñ´ï¿½");
     }
     
     private void asrListenerSreenOff() {
@@ -262,8 +262,8 @@ public class TXZTestInterface implements InitListener, ActiveListener {
                             ScreenControl.screenOff();
                         }
                     }
-                }.addCommand("CMD_SCREEN_OFF", "¹Ø±ÕÆÁÄ»", "Ï¨ÃðÆÁÄ»"));
-        LogUtil.e("RituNavi", "ÕýÔÚÎªÄú×¢²á¹Ø±ÕÆÁÄ»»½ÐÑ´Ê");
+                }.addCommand("CMD_SCREEN_OFF", "ï¿½Ø±ï¿½ï¿½ï¿½Ä»", "Ï¨ï¿½ï¿½ï¿½ï¿½Ä»"));
+        LogUtil.e("RituNavi", "ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½×¢ï¿½ï¿½Ø±ï¿½ï¿½ï¿½Ä»ï¿½ï¿½ï¿½Ñ´ï¿½");
     }
 
     private void cmdListenerGoHome() {
@@ -286,7 +286,7 @@ public class TXZTestInterface implements InitListener, ActiveListener {
                 }
             }
         });
-        TXZAsrManager.getInstance().regCommand(new String[] { "»Ø¼Ò", "ÎÒÒª»Ø¼Ò" },
+        TXZAsrManager.getInstance().regCommand(new String[] { "ï¿½Ø¼ï¿½", "ï¿½ï¿½Òªï¿½Ø¼ï¿½" },
                 "CMD_GO_HOME");
     }
 
@@ -312,7 +312,7 @@ public class TXZTestInterface implements InitListener, ActiveListener {
             }
         });
         TXZAsrManager.getInstance().regCommand(
-                new String[] { "µ¥Î»", "È¥µ¥Î»", "¹«Ë¾", "È¥¹«Ë¾" }, "CMD_GO_TO_COMPANY");
+                new String[] { "ï¿½ï¿½Î»", "È¥ï¿½ï¿½Î»", "ï¿½ï¿½Ë¾", "È¥ï¿½ï¿½Ë¾" }, "CMD_GO_TO_COMPANY");
     }
 
     private void cmdListenerStartNavi() {
@@ -325,9 +325,9 @@ public class TXZTestInterface implements InitListener, ActiveListener {
             }
         });
         TXZAsrManager.getInstance().regCommand(
-                new String[] { "ÎÒµÄµØÍ¼", "ÎÒµÄµ¼º½", "µ¼º½", "´ò¿ªµ¼º½", "Æô¶¯µ¼º½", "ÇÐ»»µ½µ¼º½" },
+                new String[] { "ï¿½ÒµÄµï¿½Í¼", "ï¿½ÒµÄµï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½ï¿½", "ï¿½ò¿ªµï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "ï¿½Ð»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" },
                 "CMD_START_NAVI");
-        Log.d("RituNavi", "ÕýÔÚÎªÄú×¢²á´ò¿ªµ¼º½ÃüÁî");
+        Log.d("RituNavi", "ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½×¢ï¿½ï¿½ò¿ªµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
     }
 
     private void cmdListenerOpenAddressBook() {
@@ -339,8 +339,8 @@ public class TXZTestInterface implements InitListener, ActiveListener {
             }
         });
         TXZAsrManager.getInstance().regCommand(
-                new String[] { "´ò¿ªµØÖ·²¾", "²é¿´µØÖ·±¡", "´ò¿ªÎÒµÄµØÖ·", "µØÖ·±¡", "Ñ¡ÔñµØÖ·",
-                        "²é¿´±£´æµÄµØÖ·" }, "CMD_OPEN_ADDR");
+                new String[] { "ï¿½ò¿ªµï¿½Ö·ï¿½ï¿½", "ï¿½é¿´ï¿½ï¿½Ö·ï¿½ï¿½", "ï¿½ï¿½ï¿½ÒµÄµï¿½Ö·", "ï¿½ï¿½Ö·ï¿½ï¿½", "Ñ¡ï¿½ï¿½ï¿½Ö·",
+                        "ï¿½é¿´ï¿½ï¿½ï¿½ï¿½Äµï¿½Ö·" }, "CMD_OPEN_ADDR");
     }
 
     private void cmdListenerCloseAddressBook() {
@@ -352,7 +352,7 @@ public class TXZTestInterface implements InitListener, ActiveListener {
             }
         });
         TXZAsrManager.getInstance().regCommand(
-                new String[] { "¹Ø±ÕµØÖ·²¾", "¹Ø±ÕµØÖ·" }, "CMD_CLOSE_ADDR");
+                new String[] { "ï¿½Ø±Õµï¿½Ö·ï¿½ï¿½", "ï¿½Ø±Õµï¿½Ö·" }, "CMD_CLOSE_ADDR");
     }
 
     private void cmdListenerOpenCalendar() {
@@ -366,9 +366,9 @@ public class TXZTestInterface implements InitListener, ActiveListener {
                 Log.d("RituNavi", "arg0:" + arg0 + "arg1:" + arg1);
             }
         });
-        TXZAsrManager.getInstance().regCommand(new String[] { "´ò¿ªÈÕÀú" },
+        TXZAsrManager.getInstance().regCommand(new String[] { "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" },
                 "CMD_OPEN_CALENDAR");
-        Log.d("RituNavi", "ÕýÔÚÎªÄú×¢²á´ò¿ªÈÕÀúÃüÁî");
+        Log.d("RituNavi", "ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½×¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
     }
 
     private void cmdListenerOpenFM() {
@@ -382,9 +382,9 @@ public class TXZTestInterface implements InitListener, ActiveListener {
                 Log.d("RituNavi", "arg0:" + arg0 + "arg1:" + arg1);
             }
         });
-        TXZAsrManager.getInstance().regCommand(new String[] { "´ò¿ª¹ã²¥" },
+        TXZAsrManager.getInstance().regCommand(new String[] { "ï¿½ò¿ª¹ã²¥" },
                 "CMD_OPEN_FM");
-        Log.d("RituNavi", "ÕýÔÚÎªÄú×¢²á´ò¿ª¹ã²¥ÃüÁî");
+        Log.d("RituNavi", "ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½×¢ï¿½ï¿½ò¿ª¹ã²¥ï¿½ï¿½ï¿½ï¿½");
     }
 
     private void cmdListenerOpenKuWo() {
@@ -400,9 +400,9 @@ public class TXZTestInterface implements InitListener, ActiveListener {
                 Log.d("RituNavi", "arg0:" + arg0 + "arg1:" + arg1);
             }
         });
-        TXZAsrManager.getInstance().regCommand(new String[] { "´ò¿ª¿áÎÒ" },
+        TXZAsrManager.getInstance().regCommand(new String[] { "ï¿½ò¿ª¿ï¿½ï¿½ï¿½" },
                 "CMD_OPEN_KUWO");
-        Log.d("RituNavi", "ÕýÔÚÎªÄú×¢²á´ò¿ª¿áÎÒÃüÁî");
+        Log.d("RituNavi", "ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½×¢ï¿½ï¿½ò¿ª¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
     }
 
     private void cmdListenerCloseKuWo() {
@@ -421,9 +421,9 @@ public class TXZTestInterface implements InitListener, ActiveListener {
                 Log.d("RituNavi", "arg0:" + arg0 + "arg1:" + arg1);
             }
         });
-        TXZAsrManager.getInstance().regCommand(new String[] { "¹Ø±Õ¿áÎÒ", "ÍË³ö¿áÎÒ" },
+        TXZAsrManager.getInstance().regCommand(new String[] { "ï¿½Ø±Õ¿ï¿½ï¿½ï¿½", "ï¿½Ë³ï¿½ï¿½ï¿½ï¿½ï¿½" },
                 "CMD_CLOSE_KUWO");
-        Log.d("RituNavi", "ÕýÔÚÎªÄú×¢²á¹Ø±Õ¿áÎÒÃüÁî");
+        Log.d("RituNavi", "ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½×¢ï¿½ï¿½Ø±Õ¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
     }
 
     private void cmdListenerOpenWeiXin() {
@@ -439,9 +439,9 @@ public class TXZTestInterface implements InitListener, ActiveListener {
                 Log.d("RituNavi", "arg0:" + arg0 + "arg1:" + arg1);
             }
         });
-        TXZAsrManager.getInstance().regCommand(new String[] { "´ò¿ªÎ¢ÐÅ" },
+        TXZAsrManager.getInstance().regCommand(new String[] { "ï¿½ï¿½Î¢ï¿½ï¿½" },
                 "CMD_OPEN_WEIXIN");
-        Log.d("RituNavi", "ÕýÔÚÎªÄú×¢²á´ò¿ªÎ¢ÐÅÃüÁî");
+        Log.d("RituNavi", "ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½×¢ï¿½ï¿½ï¿½Î¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
     }
 
     private void cmdListenerCloseWeiXin() {
@@ -457,9 +457,9 @@ public class TXZTestInterface implements InitListener, ActiveListener {
                 Log.d("RituNavi", "arg0:" + arg0 + "arg1:" + arg1);
             }
         });
-        TXZAsrManager.getInstance().regCommand(new String[] { "¹Ø±ÕÎ¢ÐÅ", "ÍË³öÎ¢ÐÅ" },
+        TXZAsrManager.getInstance().regCommand(new String[] { "ï¿½Ø±ï¿½Î¢ï¿½ï¿½", "ï¿½Ë³ï¿½Î¢ï¿½ï¿½" },
                 "CMD_CLOSE_WEIXIN");
-        Log.d("RituNavi", "ÕýÔÚÎªÄú×¢²á¹Ø±ÕÎ¢ÐÅÃüÁî");
+        Log.d("RituNavi", "ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½×¢ï¿½ï¿½Ø±ï¿½Î¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
     }
 
     private void cmdListenerOpenTest() {
@@ -475,9 +475,9 @@ public class TXZTestInterface implements InitListener, ActiveListener {
                 Log.d("RituNavi", "arg0:" + arg0 + "arg1:" + arg1);
             }
         });
-        TXZAsrManager.getInstance().regCommand(new String[] { "´ò¿ª²âÊÔ" },
+        TXZAsrManager.getInstance().regCommand(new String[] { "ï¿½ò¿ª²ï¿½ï¿½ï¿½" },
                 "CMD_OPEN_TEST");
-        Log.d("RituNavi", "ÕýÔÚÎªÄú×¢²á´ò¿ª²âÊÔ");
+        Log.d("RituNavi", "ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½×¢ï¿½ï¿½ò¿ª²ï¿½ï¿½ï¿½");
     }
 
     private void cmdListenerCloseTest() {
@@ -497,9 +497,9 @@ public class TXZTestInterface implements InitListener, ActiveListener {
                 Log.d("RituNavi", "arg0:" + arg0 + "arg1:" + arg1);
             }
         });
-        TXZAsrManager.getInstance().regCommand(new String[] { "¹Ø±Õ²âÊÔ", "ÍË³ö²âÊÔ" },
+        TXZAsrManager.getInstance().regCommand(new String[] { "ï¿½Ø±Õ²ï¿½ï¿½ï¿½", "ï¿½Ë³ï¿½ï¿½ï¿½ï¿½ï¿½" },
                 "CMD_CLOSE_TEST");
-        Log.d("RituNavi", "ÕýÔÚÎªÄú×¢²á¹Ø±Õ²âÊÔÃüÁî");
+        Log.d("RituNavi", "ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½×¢ï¿½ï¿½Ø±Õ²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
     }
 
     private void pauseMusic() {
@@ -521,9 +521,9 @@ public class TXZTestInterface implements InitListener, ActiveListener {
 
             }
         });
-        TXZAsrManager.getInstance().regCommand(new String[] { "´ò¿ªµ¼º½ÉèÖÃ" },
+        TXZAsrManager.getInstance().regCommand(new String[] { "ï¿½ò¿ªµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" },
                 "CMD_OPEN_SETTINGS");
-        Log.d("RituNavi", "ÕýÔÚÎªÄú×¢²á´ò¿ªµ¼º½ÉèÖÃ");
+        Log.d("RituNavi", "ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½×¢ï¿½ï¿½ò¿ªµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
     }
 
     private void cmdListenerCloseSettings() {
@@ -540,8 +540,8 @@ public class TXZTestInterface implements InitListener, ActiveListener {
             }
         });
         TXZAsrManager.getInstance().regCommand(
-                new String[] { "¹Ø±Õµ¼º½ÉèÖÃ", "ÍË³öµ¼º½ÉèÖÃ" }, "CMD_CLOSE_SETTINGS");
-        Log.d("RituNavi", "ÕýÔÚÎªÄú×¢²á¹Ø±Õµ¼º½ÉèÖÃÃüÁî");
+                new String[] { "ï¿½Ø±Õµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "ï¿½Ë³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" }, "CMD_CLOSE_SETTINGS");
+        Log.d("RituNavi", "ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½×¢ï¿½ï¿½Ø±Õµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
     }
 
     private void cmdListenerOpenOnlineMap() {
@@ -555,9 +555,9 @@ public class TXZTestInterface implements InitListener, ActiveListener {
                 Log.d("RituNavi", "arg0:" + arg0 + "arg1:" + arg1);
             }
         });
-        TXZAsrManager.getInstance().regCommand(new String[] { "´ò¿ªÔÚÏßµØÍ¼" },
+        TXZAsrManager.getInstance().regCommand(new String[] { "ï¿½ï¿½ï¿½ï¿½ï¿½ßµï¿½Í¼" },
                 "CMD_OPEN_ONLINE_MAP");
-        Log.d("RituNavi", "ÕýÔÚÎªÄú×¢²á´ò¿ªÔÚÏßµØÍ¼");
+        Log.d("RituNavi", "ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½×¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ßµï¿½Í¼");
     }
 
     private void cmdListenerOpenWeixinAss() {
@@ -571,9 +571,9 @@ public class TXZTestInterface implements InitListener, ActiveListener {
                 Log.d("RituNavi", "arg0:" + arg0 + "arg1:" + arg1);
             }
         });
-        TXZAsrManager.getInstance().regCommand(new String[] { "´ò¿ªÎ¢ÐÅÖúÊÖ" },
+        TXZAsrManager.getInstance().regCommand(new String[] { "ï¿½ï¿½Î¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" },
                 "CMD_OPEN_WEIXIN_ASSISTANT");
-        Log.d("RituNavi", "ÕýÔÚÎªÄú×¢²á´ò¿ªÎ¢ÐÅÖúÊÖ");
+        Log.d("RituNavi", "ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½×¢ï¿½ï¿½ï¿½Î¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
     }
 
     private void cmdListenerOpenBluetoothPhone() {
@@ -587,9 +587,9 @@ public class TXZTestInterface implements InitListener, ActiveListener {
                 Log.d("RituNavi", "arg0:" + arg0 + "arg1:" + arg1);
             }
         });
-        TXZAsrManager.getInstance().regCommand(new String[] { "´ò¿ªÀ¶ÑÀµç»°" },
+        TXZAsrManager.getInstance().regCommand(new String[] { "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ç»°" },
                 "CMD_OPEN_BLUETOOTH_PHONE");
-        Log.d("RituNavi", "ÕýÔÚÎªÄú×¢²á´ò¿ªÀ¶ÑÀµç»°");
+        Log.d("RituNavi", "ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½×¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ç»°");
     }
 
     private void cmdListenerOpenOnlineFM() {
@@ -603,9 +603,9 @@ public class TXZTestInterface implements InitListener, ActiveListener {
                 Log.d("RituNavi", "arg0:" + arg0 + "arg1:" + arg1);
             }
         });
-        TXZAsrManager.getInstance().regCommand(new String[] { "´ò¿ªÍøÂçµçÌ¨" },
+        TXZAsrManager.getInstance().regCommand(new String[] { "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¨" },
                 "CMD_OPEN_ONLINE_FM");
-        Log.d("RituNavi", "ÕýÔÚÎªÄú×¢²á´ò¿ªÍøÂçµçÌ¨");
+        Log.d("RituNavi", "ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½×¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¨");
     }
 
     private void cmdListenerCloseOnlineFM() {
@@ -631,8 +631,8 @@ public class TXZTestInterface implements InitListener, ActiveListener {
             }
         });
         TXZAsrManager.getInstance().regCommand(
-                new String[] { "¹Ø±ÕÍøÂçµçÌ¨", "ÍË³öÍøÂçµçÌ¨","¹Ø±ÕÔÚÏßµçÌ¨" }, "CMD_CLOSE_ONLINE_FM");
-        Log.d("RituNavi", "ÕýÔÚÎªÄú×¢²á¹Ø±ÕÍøÂçµçÌ¨ÃüÁî");
+                new String[] { "ï¿½Ø±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¨", "ï¿½Ë³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¨","ï¿½Ø±ï¿½ï¿½ï¿½ï¿½ßµï¿½Ì¨" }, "CMD_CLOSE_ONLINE_FM");
+        Log.d("RituNavi", "ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½×¢ï¿½ï¿½Ø±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¨ï¿½ï¿½ï¿½ï¿½");
     }
 
     private void cmdListenerOpenOnlineShop() {
@@ -646,9 +646,9 @@ public class TXZTestInterface implements InitListener, ActiveListener {
                 Log.d("RituNavi", "arg0:" + arg0 + "arg1:" + arg1);
             }
         });
-        TXZAsrManager.getInstance().regCommand(new String[] { "´ò¿ªÓ¦ÓÃÉÌµê" },
+        TXZAsrManager.getInstance().regCommand(new String[] { "ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½Ìµï¿½" },
                 "CMD_OPEN_ONLINE_SHOP");
-        Log.d("RituNavi", "ÕýÔÚÎªÄú×¢²á´ò¿ªÓ¦ÓÃÉÌµê");
+        Log.d("RituNavi", "ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½×¢ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½Ìµï¿½");
     }
 
     private void cmdListenerOpenFileManager() {
@@ -662,9 +662,9 @@ public class TXZTestInterface implements InitListener, ActiveListener {
                 Log.d("RituNavi", "arg0:" + arg0 + "arg1:" + arg1);
             }
         });
-        TXZAsrManager.getInstance().regCommand(new String[] { "´ò¿ªÎÄ¼þ¹ÜÀí" },
+        TXZAsrManager.getInstance().regCommand(new String[] { "ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½" },
                 "CMD_OPEN_FILE_MANAGER");
-        Log.d("RituNavi", "ÕýÔÚÎªÄú×¢²á´ò¿ªÎÄ¼þ¹ÜÀí");
+        Log.d("RituNavi", "ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½×¢ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½");
     }
 
     private void cmdListenerOpenOneWifi() {
@@ -679,9 +679,9 @@ public class TXZTestInterface implements InitListener, ActiveListener {
                 Log.d("RituNavi", "arg0:" + arg0 + "arg1:" + arg1);
             }
         });
-        TXZAsrManager.getInstance().regCommand(new String[] { "´ò¿ªÒ»¼üWIFI" },
+        TXZAsrManager.getInstance().regCommand(new String[] { "ï¿½ï¿½Ò»ï¿½ï¿½WIFI" },
                 "CMD_OPEN_ONE_WIFI");
-        Log.d("RituNavi", "ÕýÔÚÎªÄú×¢²á´ò¿ªÒ»¼üWIFI");
+        Log.d("RituNavi", "ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½×¢ï¿½ï¿½ï¿½Ò»ï¿½ï¿½WIFI");
     }
 
     private void cmdListenerOpenWeiTu() {
@@ -698,9 +698,9 @@ public class TXZTestInterface implements InitListener, ActiveListener {
                 Log.d("RituNavi", "arg0:" + arg0 + "arg1:" + arg1);
             }
         });
-        TXZAsrManager.getInstance().regCommand(new String[] { "´ò¿ªÎ¢Í¼" },
+        TXZAsrManager.getInstance().regCommand(new String[] { "ï¿½ï¿½Î¢Í¼" },
                 "CMD_OPEN_WEITU");
-        Log.d("RituNavi", "ÕýÔÚÎªÄú×¢²á´ò¿ªÎ¢Í¼ÃüÁî");
+        Log.d("RituNavi", "ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½×¢ï¿½ï¿½ï¿½Î¢Í¼ï¿½ï¿½ï¿½ï¿½");
     }
 
     private void cmdListenerCloseWeiTu() {
@@ -721,9 +721,9 @@ public class TXZTestInterface implements InitListener, ActiveListener {
                 }
             }
         });
-        TXZAsrManager.getInstance().regCommand(new String[] { "¹Ø±ÕÎ¢Í¼", "ÍË³öÎ¢Í¼" },
+        TXZAsrManager.getInstance().regCommand(new String[] { "ï¿½Ø±ï¿½Î¢Í¼", "ï¿½Ë³ï¿½Î¢Í¼" },
                 "CMD_CLOSE_WEITU");
-        Log.d("RituNavi", "ÕýÔÚÎªÄú×¢²á¹Ø±ÕÎ¢Í¼ÃüÁî");
+        Log.d("RituNavi", "ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½×¢ï¿½ï¿½Ø±ï¿½Î¢Í¼ï¿½ï¿½ï¿½ï¿½");
     }
 
     private void openAppByPackageName(String packageName) {
@@ -733,7 +733,7 @@ public class TXZTestInterface implements InitListener, ActiveListener {
         // intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         MyTestApplication.getInstance().getApplicationContext()
                 .startActivity(intent);
-        Log.d("RituNavi", "ÕýÔÚÎªÄú´ò¿ª" + packageName);
+        Log.d("RituNavi", "ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½" + packageName);
     }
 
     private void openAppByPackageNameWithAction(String packageName,
@@ -745,7 +745,7 @@ public class TXZTestInterface implements InitListener, ActiveListener {
         intent.setAction(action);
         MyTestApplication.getInstance().getApplicationContext()
                 .startActivity(intent);
-        Log.d("RituNavi", "ÕýÔÚÎªÄú´ò¿ª" + packageName);
+        Log.d("RituNavi", "ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½" + packageName);
     }
 
     private void closeAppByPackageName(String packageName) {
@@ -765,7 +765,7 @@ public class TXZTestInterface implements InitListener, ActiveListener {
 
     private void killProcessByPackageName2(Context context, String packageName) {
         Intent intent = new Intent(Intent.ACTION_MAIN);
-        // Èç¹ûintent²»Ö¸¶¨category£¬ÄÇÃ´ÎÞÂÛintent filterµÄÄÚÈÝÊÇÊ²Ã´¶¼Ó¦¸ÃÊÇÆ¥ÅäµÄ¡£
+        // ï¿½ï¿½ï¿½intentï¿½ï¿½Ö¸ï¿½ï¿½categoryï¿½ï¿½ï¿½ï¿½Ã´ï¿½ï¿½ï¿½ï¿½intent filterï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê²Ã´ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½Æ¥ï¿½ï¿½Ä¡ï¿½
         intent.addCategory(Intent.CATEGORY_HOME);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
@@ -776,7 +776,7 @@ public class TXZTestInterface implements InitListener, ActiveListener {
     }
 
     private void killProcessByPackageName(Context context, String packageName) {
-        int count = 0;// ±»É±½ø³Ì¼ÆÊý
+        int count = 0;// ï¿½ï¿½É±ï¿½ï¿½ï¿½Ì¼ï¿½ï¿½ï¿½
         long beforeClearMemory = getAvailMemory(context);
         ActivityManager activityManger = (ActivityManager) context
                 .getSystemService(Context.ACTIVITY_SERVICE);
@@ -788,21 +788,21 @@ public class TXZTestInterface implements InitListener, ActiveListener {
                 String[] pkgList = apinfo.pkgList;
                 Log.d("RituNavi", "pkgList " + pkgList.toString());
                 for (int j = 0; j < pkgList.length; j++) {
-                    // 2.2ÒÔÉÏÊÇ¹ýÊ±µÄ,ÇëÓÃkillBackgroundProcesses´úÌæ
+                    // 2.2ï¿½ï¿½ï¿½ï¿½ï¿½Ç¹ï¿½Ê±ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½killBackgroundProcessesï¿½ï¿½ï¿½ï¿½
                     activityManger.killBackgroundProcesses(pkgList[j]);
                     Log.d("RituNavi", "pkgList[j] " + pkgList[j].toString());
                     count++;
                 }
             }
         }
-        long afterMem = getAvailMemory(context);// ÇåÀíºóµÄÄÚ´æÕ¼ÓÃ
+        long afterMem = getAvailMemory(context);// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½Õ¼ï¿½ï¿½
         long cleanMem = afterMem - beforeClearMemory;
         Log.d("RituNavi", "forceStopPackage kill process size is " + count
                 + ", clean memory is " + cleanMem + "M");
     }
 
     /**
-     * »ñÈ¡androidµ±Ç°¿ÉÓÃÄÚ´æ´óÐ¡
+     * ï¿½ï¿½È¡androidï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½ï¿½Ð¡
      * 
      */
     private long getAvailMemory(Context context) {
@@ -815,7 +815,7 @@ public class TXZTestInterface implements InitListener, ActiveListener {
 
     // Intent intent = new Intent(Intent.ACTION_MAIN);
     // intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-    // //Èç¹ûintent²»Ö¸¶¨category£¬ÄÇÃ´ÎÞÂÛintent filterµÄÄÚÈÝÊÇÊ²Ã´¶¼Ó¦¸ÃÊÇÆ¥ÅäµÄ¡£
+    // //ï¿½ï¿½ï¿½intentï¿½ï¿½Ö¸ï¿½ï¿½categoryï¿½ï¿½ï¿½ï¿½Ã´ï¿½ï¿½ï¿½ï¿½intent filterï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê²Ã´ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½Æ¥ï¿½ï¿½Ä¡ï¿½
     // intent.addCategory(Intent.CATEGORY_HOME);
     // MyTestApplication.getInstance().getBaseContext().startActivity(intent);
     // }catch (IllegalAccessException e) {
@@ -855,7 +855,7 @@ public class TXZTestInterface implements InitListener, ActiveListener {
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 ComponentName component = new ComponentName(TXZ_PACKAGE_NAME,
                         TXZ_ACTIVITY_NAME);
-                Log.d("RituNavi", "´ò¿ªµ¼º½ÃüÁîÊÕµ½£¬ÕýÔÚÎªÄú´ò¿ªµ¼º½");
+                Log.d("RituNavi", "ï¿½ò¿ªµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ò¿ªµï¿½ï¿½ï¿½");
                 startActivity(component, intent);
             }
         }
@@ -896,7 +896,7 @@ public class TXZTestInterface implements InitListener, ActiveListener {
             long lon = bundle.getLong("navi_longitude");
             long lat = bundle.getLong("navi_latitude");
             String poiName = bundle.getString("navi_poiName");
-            // Â·¾¶¹æ»®
+            // Â·ï¿½ï¿½ï¿½æ»®
             native_RoutePlan(lon, lat, poiName);
         }
     }
@@ -907,7 +907,7 @@ public class TXZTestInterface implements InitListener, ActiveListener {
     WakeLock wakeLock;
 
     /**
-     * »½ÐÑÆÁÄ»
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä»
      */
     public void screenOn() {
 //        Log.i("RituNavi", "screenOn");
@@ -922,7 +922,7 @@ public class TXZTestInterface implements InitListener, ActiveListener {
     }
 
     /**
-     * Ï¨ÃðÆÁÄ»
+     * Ï¨ï¿½ï¿½ï¿½ï¿½Ä»
      */
     public void screenOff() {
 //        Log.i("RituNavi", "screenOff");
@@ -938,7 +938,7 @@ public class TXZTestInterface implements InitListener, ActiveListener {
     public void pauseMusic(Context context, int keyCode) {
         AudioManager audioManager = (AudioManager) context
                 .getSystemService(Context.AUDIO_SERVICE);
-        // ÏÈÅÐ¶ÏºóÌ¨ÊÇ·ñÔÚ²¥·ÅÒôÀÖ
+        // ï¿½ï¿½ï¿½Ð¶Ïºï¿½Ì¨ï¿½Ç·ï¿½ï¿½Ú²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         if (audioManager.isMusicActive()) {
             KeyEvent keyEvent = new KeyEvent(KeyEvent.ACTION_DOWN, keyCode);
             Intent intent = new Intent(Intent.ACTION_MEDIA_BUTTON);
@@ -958,14 +958,14 @@ public class TXZTestInterface implements InitListener, ActiveListener {
         try {
             XmlResourceParser parser = MyTestApplication.getInstance().getApplicationContext().getResources().getXml(
                     R.xml.launcher_config);
-            int event = parser.getEventType();// ²úÉúµÚÒ»¸öÊÂ¼þ
+            int event = parser.getEventType();// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Â¼ï¿½
             while (event != XmlPullParser.END_DOCUMENT) {
                 String appName = null;
                 switch (event) {
-                case XmlPullParser.START_TAG:// ÅÐ¶Ïµ±Ç°ÊÂ¼þÊÇ·ñÊÇ±êÇ©ÔªËØ¿ªÊ¼ÊÂ¼þ
+                case XmlPullParser.START_TAG:// ï¿½Ð¶Ïµï¿½Ç°ï¿½Â¼ï¿½ï¿½Ç·ï¿½ï¿½Ç±ï¿½Ç©Ôªï¿½Ø¿ï¿½Ê¼ï¿½Â¼ï¿½
                     Log.e("RituNavi", "parser.getName():"+parser.getName());
-                    if ("name".equals(parser.getName())) {// ÅÐ¶Ï¿ªÊ¼±êÇ©ÔªËØ
-                        appName = parser.getAttributeValue(0);// µÃµ½±êÇ©µÄÊôÐÔÖµ
+                    if ("name".equals(parser.getName())) {// ï¿½Ð¶Ï¿ï¿½Ê¼ï¿½ï¿½Ç©Ôªï¿½ï¿½
+                        appName = parser.getAttributeValue(0);// ï¿½Ãµï¿½ï¿½ï¿½Ç©ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
                         Log.e("RituNavi", "appName0:"+appName);
                     }
                     if (appName != null && appName.equals(name)) {
@@ -976,13 +976,13 @@ public class TXZTestInterface implements InitListener, ActiveListener {
                         }
                     }
                     break;
-                case XmlPullParser.END_TAG:// ÅÐ¶Ïµ±Ç°ÊÂ¼þÊÇ·ñÊÇ±êÇ©ÔªËØ½áÊøÊÂ¼þ
+                case XmlPullParser.END_TAG:// ï¿½Ð¶Ïµï¿½Ç°ï¿½Â¼ï¿½ï¿½Ç·ï¿½ï¿½Ç±ï¿½Ç©Ôªï¿½Ø½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½
                     if ("app".equals(parser.getName())) {
                         appName = null;
                     }
                     break;
                 }
-                event = parser.next();// ½øÈëÏÂÒ»¸öÔªËØ²¢´¥·¢ÏàÓ¦ÊÂ¼þ
+                event = parser.next();// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ôªï¿½Ø²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½Â¼ï¿½
             }// end while
             return packageName;
         }

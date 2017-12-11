@@ -17,7 +17,7 @@ import com.txznet.sdk.TXZTtsManager;
 
 /**
  * @author Zengcq
- * @date 2016Äê12ÔÂ30ÈÕ
+ * @date 2016ï¿½ï¿½12ï¿½ï¿½30ï¿½ï¿½
  * @version 1.0
  * @description
  */
@@ -47,7 +47,7 @@ public class SyncBlueToothReceiver extends BroadcastReceiver{
                 aCache = ACache.get(context);   
             }           
             aCache.put(btAddress, (Serializable)btContacts);
-            TXZTtsManager.getInstance().speakText("ÒÑÍ¬²½ÁªÏµÈË");
+            TXZTtsManager.getInstance().speakText("ï¿½ï¿½Í¬ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½");
             
         }else if(action.equals("bluetooth_connect_address_action")){
             if(isBtDisconnected){
@@ -55,17 +55,17 @@ public class SyncBlueToothReceiver extends BroadcastReceiver{
                 isBtDisconnected = false;
                 String btAddress2 = intent.getStringExtra("bt_address");
                 getContactsByAddress(context, btAddress2);  
-                TXZTtsManager.getInstance().speakText("ÒÑÁ¬½ÓÀ¶ÑÀÉè±¸"); 
+                TXZTtsManager.getInstance().speakText("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½è±¸"); 
             }                     
         }else if(action.equals("bluetooth_disconnect_action")){
             if(!isBtDisconnected){
-                TXZTtsManager.getInstance().speakText("ÒÑ¶Ï¿ªÀ¶ÑÀÁ¬½Ó");
+                TXZTtsManager.getInstance().speakText("ï¿½Ñ¶Ï¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
                 TXZCallManager.getInstance().syncContacts(new ArrayList<Contact>());   
                 Log.e("RituNavi", "dis isBtDisconnected "+isBtDisconnected);
                 isBtDisconnected = true;  
             }                              
         }else if (action.equals("bluetooth_disconnected_info_action")){
-            TXZTtsManager.getInstance().speakText("ÇëÄúÏÈÁ¬½ÓÀ¶ÑÀÉè±¸");
+            TXZTtsManager.getInstance().speakText("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½è±¸");
         }
     }
     
@@ -98,8 +98,9 @@ public class SyncBlueToothReceiver extends BroadcastReceiver{
             String gsonString = gson.toJson(btContacts);
             Log.e("RituNavi",gsonString);
         }else{
-            TXZTtsManager.getInstance().speakText("ÇëÍ¬²½ÁªÏµÈË");
+            TXZTtsManager.getInstance().speakText("ï¿½ï¿½Í¬ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½");
             TXZCallManager.getInstance().syncContacts(new ArrayList<Contact>());
         }
     }
+    
 }

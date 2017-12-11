@@ -17,6 +17,8 @@
     <string name="playing">Playing</string>
     <string name="pause">Pause</string>
     <string name="action_settings">Setting</string>
+    <string name="action_delete">delete</string>
+    <string name="action_compose">compose</string>
     <string name="action_sort">Sort</string>
     <string name="action_filter">Filter</string>
     <string name="title_activity_my_service">MyServiceActivity</string>
@@ -49,6 +51,19 @@
     <string name="title_activity_scroll_position">ScrollPositionActivity</string>
     <string name="title_activity_custom_widget">CustomWidgetActivity</string>
     <string name="title_activity_swipe_list_view">SwipeListViewActivity</string>
-    <string name="title_activity_drag_view">DragViewActivity</string>
+    <string name="title_activity_drag_view">拖我试下</string>
+    <string name="title_activity_seek_bar_test">SeekBarTestActivity</string>
+    <string name="title_activity_handler">HandlerActivity</string>
+    <string name="title_activity_scroll_click">ScrollClickActivity</string>
+    <string name="title_activity_aidl">AidlActivity</string>
+    <string name="title_activity_record_test">RecordTestActivity</string>
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_item_list">Items</string>
+    <string name="title_item_detail">Item Detail</string>
+    <string name="title_activity_home_lock">HomeLockActivity</string>
+    <string name="title_activity_audio_manager_test">AudioManagerTestActivity</string>
+    <string name="title_activity_my_sdk">MySdkActivity</string>
 
 </resources>

@@ -1,14 +1,14 @@
-package com.example.mytestdemo.javatest.javamode.behaviortype;
+﻿package com.example.mytestdemo.javatest.javamode.behaviortype;
 
 
 /**
  * @author Zengcq
- * @date 2016��12��14��
+ * @date 2016年12月14日
  * @version 1.0
  * @description
- * ����˼�壬������ģʽ����˳����ʾۼ��еĶ���һ����˵�������зǳ�����������Լ�����Ƚ���Ϥ�Ļ���
- * ���Ȿģʽ��ʮ�����ɡ�
- * ��仰����������˼��һ����Ҫ�����Ķ��󣬼��ۼ����󣬶��ǵ������������ڶԾۼ�������б������ʡ�
+ * 顾名思义，迭代器模式就是顺序访问聚集中的对象，一般来说，集合中非常常见，如果对集合类比较熟悉的话，
+ * 理解本模式会十分轻松。
+ * 这句话包含两层意思：一是需要遍历的对象，即聚集对象，二是迭代器对象，用于对聚集对象进行遍历访问。
  */
 public class IteratorMode {
 
@@ -43,26 +43,26 @@ interface Collection {
     
     public Iterators iterator();  
       
-    /*ȡ�ü���Ԫ��*/  
+    /*取得集合元素*/  
     public Object get(int i);  
       
-    /*ȡ�ü��ϴ�С*/  
+    /*取得集合大小*/  
     public int size();  
 }  
 
 interface Iterators {  
-    //ǰ��  
+    //前移  
     public Object previous();  
       
-    //����  
+    //后移  
     public Object next();  
     public boolean hasNext();  
     public boolean hasPrevious();  
       
-    //ȡ�õ�һ��Ԫ��  
+    //取得第一个元素  
     public Object first();  
     
-  //ȡ�����һ��Ԫ��  
+  //取得最后一个元素  
     public Object last();  
 }  
 
@@ -143,8 +143,8 @@ class MyIterator implements Iterators {
 }  
 
 /*
- * �˴�����ò��ģ����һ��������Ĺ��̣��о��ǲ��Ǻ�ˬ����ʵJDK�и�����Ҳ������Щ�����Ķ�������һЩ���ģʽ��
- * �ټ�һЩ�Ż��ŵ�һ��ģ�ֻҪ���ǰ���Щ����ѧ���ˣ�
- * ���պ��ˣ�����Ҳ����д���Լ��ļ����࣬������ܣ�
+ * 此处我们貌似模拟了一个集合类的过程，感觉是不是很爽？其实JDK中各个类也都是这些基本的东西，加一些设计模式，
+ * 再加一些优化放到一起的，只要我们把这些东西学会了，
+ * 掌握好了，我们也可以写出自己的集合类，甚至框架！
  */
 

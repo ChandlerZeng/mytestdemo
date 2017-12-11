@@ -1,0 +1,26 @@
+<com.example.mytestdemo.widget.ScrollClickLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroll_click_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="120dp"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="scroll_click_conflict_test" />
+
+    <Button
+        android:id="@+id/scroll_click_btn1"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="Button1" />
+
+    <Button
+        android:id="@+id/scroll_click_btn2"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="Button2" />
+
+</com.example.mytestdemo.widget.ScrollClickLayout>

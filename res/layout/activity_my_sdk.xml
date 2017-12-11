@@ -1,0 +1,65 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <TextView
+            android:id="@+id/tv_friends"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="hello friends"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/edt_friend_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/tv_friends"
+            android:ems="10" >
+
+            <requestFocus />
+        </EditText>
+
+        <RadioGroup
+            android:id="@+id/radio_gp_friends"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/edt_friend_name"
+            android:layout_alignParentRight="true" >
+
+            <RadioButton
+                android:id="@+id/radioButton1_friends"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="man" />
+
+            <RadioButton
+                android:id="@+id/radioButton2_friends"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="woman" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btn_add_friends"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/edt_friend_name"
+            android:text="Add_Friends" />
+
+        <TextView
+            android:id="@+id/tv_friends_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/btn_add_friends"
+            android:text="info" />
+    </RelativeLayout>
+
+</ScrollView>

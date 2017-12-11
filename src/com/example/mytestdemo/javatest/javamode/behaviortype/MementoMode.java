@@ -1,13 +1,13 @@
-package com.example.mytestdemo.javatest.javamode.behaviortype;
+ï»¿package com.example.mytestdemo.javatest.javamode.behaviortype;
 /**
  * @author Zengcq
- * @date 2016Äê12ÔÂ15ÈÕ
+ * @date 2016å¹´12æœˆ15æ—¥
  * @version 1.0
  * @description
- * Ö÷ÒªÄ¿µÄÊÇ±£´æÒ»¸ö¶ÔÏóµÄÄ³¸ö×´Ì¬£¬ÒÔ±ãÔÚÊÊµ±µÄÊ±ºò»Ö¸´¶ÔÏó£¬¸öÈË¾õµÃ½Ğ±¸·İÄ£Ê½¸üĞÎÏóĞ©£¬
- * Í¨Ë×µÄ½²ÏÂ£º¼ÙÉèÓĞÔ­Ê¼ÀàA£¬AÖĞÓĞ¸÷ÖÖÊôĞÔ£¬A¿ÉÒÔ¾ö¶¨ĞèÒª±¸·İµÄÊôĞÔ£¬
- * ±¸ÍüÂ¼ÀàBÊÇÓÃÀ´´æ´¢AµÄÒ»Ğ©ÄÚ²¿×´Ì¬£¬
- * ÀàCÄØ£¬¾ÍÊÇÒ»¸öÓÃÀ´´æ´¢±¸ÍüÂ¼µÄ£¬ÇÒÖ»ÄÜ´æ´¢£¬²»ÄÜĞŞ¸ÄµÈ²Ù×÷¡£
+ * ä¸»è¦ç›®çš„æ˜¯ä¿å­˜ä¸€ä¸ªå¯¹è±¡çš„æŸä¸ªçŠ¶æ€ï¼Œä»¥ä¾¿åœ¨é€‚å½“çš„æ—¶å€™æ¢å¤å¯¹è±¡ï¼Œä¸ªäººè§‰å¾—å«å¤‡ä»½æ¨¡å¼æ›´å½¢è±¡äº›ï¼Œ
+ * é€šä¿—çš„è®²ä¸‹ï¼šå‡è®¾æœ‰åŸå§‹ç±»Aï¼ŒAä¸­æœ‰å„ç§å±æ€§ï¼ŒAå¯ä»¥å†³å®šéœ€è¦å¤‡ä»½çš„å±æ€§ï¼Œ
+ * å¤‡å¿˜å½•ç±»Bæ˜¯ç”¨æ¥å­˜å‚¨Açš„ä¸€äº›å†…éƒ¨çŠ¶æ€ï¼Œ
+ * ç±»Cå‘¢ï¼Œå°±æ˜¯ä¸€ä¸ªç”¨æ¥å­˜å‚¨å¤‡å¿˜å½•çš„ï¼Œä¸”åªèƒ½å­˜å‚¨ï¼Œä¸èƒ½ä¿®æ”¹ç­‰æ“ä½œã€‚
  */
 public class MementoMode {
 
@@ -18,24 +18,24 @@ public class MementoMode {
 		Storage storage = new Storage(original.createMemento());
 		
 
-        System.out.println("³õÊ¼»¯×´Ì¬Îª£º" + original.getValue());  
+        System.out.println("åˆå§‹åŒ–çŠ¶æ€ä¸ºï¼š" + original.getValue());  
         
-		// ĞŞ¸ÄÔ­Ê¼ÀàµÄ×´Ì¬  
+		// ä¿®æ”¹åŸå§‹ç±»çš„çŠ¶æ€  
         original.setValue("after");
-        System.out.println("ĞŞ¸ÄºóµÄ×´Ì¬Îª£º" + original.getValue());  
+        System.out.println("ä¿®æ”¹åçš„çŠ¶æ€ä¸ºï¼š" + original.getValue());  
         
-        // »Ø¸´Ô­Ê¼ÀàµÄ×´Ì¬  
+        // å›å¤åŸå§‹ç±»çš„çŠ¶æ€  
         original.restoreMemento(storage.getMemento());
-        System.out.println("»Ö¸´ºóµÄ×´Ì¬Îª£º" + original.getValue());  
-        System.out.println("»Ö¸´ºóµÄ×´Ì¬Îª£º" + restore);  
+        System.out.println("æ¢å¤åçš„çŠ¶æ€ä¸ºï¼š" + original.getValue());  
+        System.out.println("æ¢å¤åçš„çŠ¶æ€ä¸ºï¼š" + restore);  
         
         Memento memento = new Memento("before", "before");
         Storage storage2 = new Storage(memento);
-        System.out.println("³õÊ¼»¯×´Ì¬Îª£º" + memento.getValue()+memento.getKey());
+        System.out.println("åˆå§‹åŒ–çŠ¶æ€ä¸ºï¼š" + memento.getValue()+memento.getKey());
         memento.setKey("after");
         memento.setValue("after");
-        System.out.println("ĞŞ¸ÄºóµÄ×´Ì¬Îª£º" + memento.getValue()+memento.getKey());
-        System.out.println("»Ö¸´ºóµÄ×´Ì¬Îª£º" + storage2.getMemento().getKey()+storage2.getMemento().getValue());  
+        System.out.println("ä¿®æ”¹åçš„çŠ¶æ€ä¸ºï¼š" + memento.getValue()+memento.getKey());
+        System.out.println("æ¢å¤åçš„çŠ¶æ€ä¸ºï¼š" + storage2.getMemento().getKey()+storage2.getMemento().getValue());  
         
 	}
 

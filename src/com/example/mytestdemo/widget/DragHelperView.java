@@ -22,12 +22,14 @@ public class DragHelperView extends LinearLayout {
     private ViewDragHelper mDragger;
 
     private View mDragView;
-    private View mAutoBackView;
+    private View mDragBar;
+    private LinearLayout mAutoBackView;
     private View mEdgeTrackerView;
 
     private Point mAutoBackOriginPos = new Point();
     private static int curPosTop;
     private boolean isHide = true;
+    private boolean isReleased = false;
     private VelocityTracker mVelocityTracker;
     private float xMove;
     private float yMove;
@@ -42,7 +44,7 @@ public class DragHelperView extends LinearLayout {
                     public boolean tryCaptureView(View child, int pointerId) {
                         // mEdgeTrackerView½ûÖ¹Ö±½ÓÒÆ¶¯
 //                        return child == mDragView || child == mAutoBackView;
-                        return child == mAutoBackView;
+                        return child == (LinearLayout)mAutoBackView || child == mDragBar;
                     }
 
                     @Override
@@ -59,6 +61,9 @@ public class DragHelperView extends LinearLayout {
                         Log.i(TAG,"top:"+top+" dy:"+dy);
                         if(top>0){
                             return 0;
+                        }
+                        if(isHide && Math.abs(xMove)>=0){
+                            mDragBar.setVisibility(View.GONE);
                         }
                         return top;
                     }
@@ -84,6 +89,7 @@ public class DragHelperView extends LinearLayout {
                                 if(curPosTop<-getHeight()/2+150 && yMove>0 || Math.abs(xMove)>350 && yMove>0){
                                     mDragger.settleCapturedViewAt(mAutoBackOriginPos.x,
                                             mAutoBackOriginPos.y);
+                                    
                                     isHide = true;
                                     
                                 }else{
@@ -104,6 +110,10 @@ public class DragHelperView extends LinearLayout {
 //                            }
                             Log.i(TAG,"x:"+mAutoBackOriginPos.x+" y:"+mAutoBackOriginPos.y+" curPosTop:"+curPosTop
                                     +" getHeight:"+getHeight()+" isHide:"+isHide);
+                            isReleased = true;
+                            if(isHide && isReleased){
+                                mDragBar.setVisibility(View.VISIBLE);
+                            }
                             invalidate();
                         }
                     }
@@ -194,7 +204,10 @@ public class DragHelperView extends LinearLayout {
         super.onFinishInflate();
 
 //        mDragView = getChildAt(1);
-        mAutoBackView = getChildAt(0);
+//        mAutoBackView = getChildAt(0);
+//        mDragBar = getChildAt(0);
+        mAutoBackView = (LinearLayout) getChildAt(0);
+        mDragBar = mAutoBackView.getChildAt(5);
         
 //        mEdgeTrackerView = getChildAt(2);
     }

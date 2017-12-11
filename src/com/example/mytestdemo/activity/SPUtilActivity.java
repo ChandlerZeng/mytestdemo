@@ -2,9 +2,13 @@ package com.example.mytestdemo.activity;
 
 import java.util.Map;
 
+import android.R.integer;
 import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -26,6 +30,8 @@ public class SPUtilActivity extends BaseActivity implements OnClickListener {
 	private Button saveButton;
 	private Button clearOneButton;
 	private Button clearAllButton;
+	private Button wallPaperButton;
+	private TextView txtWallpaper;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -43,9 +49,12 @@ public class SPUtilActivity extends BaseActivity implements OnClickListener {
 		saveButton = (Button) findViewById(R.id.button1);
 		clearOneButton = (Button) findViewById(R.id.button2);
 		clearAllButton = (Button) findViewById(R.id.button3);
+		wallPaperButton = (Button) findViewById(R.id.btn_wallpaper);
+		txtWallpaper = (TextView) findViewById(R.id.txt_wallpaper);
 		saveButton.setOnClickListener(this);
 		clearOneButton.setOnClickListener(this);
 		clearAllButton.setOnClickListener(this);
+		wallPaperButton.setOnClickListener(this);
 	}
 
 	@Override
@@ -74,9 +83,31 @@ public class SPUtilActivity extends BaseActivity implements OnClickListener {
 					Toast.LENGTH_SHORT).show();
 			break;
 			
+		case R.id.btn_wallpaper:
+			getWallpaperType();
+			break;
+			
 		default:
 			break;
 		}
+	}
+	
+	private void getWallpaperType(){
+		Context ctn = null;
+		int type = 0;
+        try {
+            ctn = this.createPackageContext("cn.ritu.carsetting",
+                    CONTEXT_IGNORE_SECURITY);
+        } catch (NameNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        if (ctn != null) {
+            SharedPreferences prference = ctn.getSharedPreferences("sf_ritu_carsetting",MODE_MULTI_PROCESS | MODE_WORLD_READABLE | MODE_WORLD_WRITEABLE);
+            type = prference.getInt("wallpaper_type", 0);
+            Log.i("wallpaper_type", "type=" + type);
+        }
+        txtWallpaper.setText("wallpaper_type:"+type);;
 	}
 
 	private void saveData() {
@@ -85,27 +116,27 @@ public class SPUtilActivity extends BaseActivity implements OnClickListener {
 		String s3 = editText3.getText().toString();
 		String s4 = editText4.getText().toString();
 		if (s1.equals("")) {
-			Toast.makeText(SPUtilActivity.this, "ÐÕÃû²»ÄÜÎª¿Õ", Toast.LENGTH_SHORT)
+			Toast.makeText(SPUtilActivity.this, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½", Toast.LENGTH_SHORT)
 					.show();
 			return;
 		}
 		if (s2.equals("")) {
-			Toast.makeText(SPUtilActivity.this, "ÃÜÂë²»ÄÜÎª¿Õ", Toast.LENGTH_SHORT)
+			Toast.makeText(SPUtilActivity.this, "ï¿½ï¿½ï¿½ë²»ï¿½ï¿½Îªï¿½ï¿½", Toast.LENGTH_SHORT)
 					.show();
 			return;
 		}
 		if (s3.equals("")) {
-			Toast.makeText(SPUtilActivity.this, "½ðÇ®²»ÄÜÎª¿Õ", Toast.LENGTH_SHORT)
+			Toast.makeText(SPUtilActivity.this, "ï¿½ï¿½Ç®ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½", Toast.LENGTH_SHORT)
 					.show();
 			return;
 		}
 		if (s4.equals("")) {
-			Toast.makeText(SPUtilActivity.this, "ÊÇ·ñ¸»ÓÐ²»ÄÜÎª¿Õ", Toast.LENGTH_SHORT)
+			Toast.makeText(SPUtilActivity.this, "ï¿½Ç·ï¿½ï¿½Ð²ï¿½ï¿½ï¿½Îªï¿½ï¿½", Toast.LENGTH_SHORT)
 					.show();
 			return;
 		}
 		if (!(s4.equals("true") || s4.equals("false"))) {
-			Toast.makeText(SPUtilActivity.this, "ÊÇ·ñ¸»ÓÐÊý¾ÝÀàÐÍÓÐÎó" + s4,
+			Toast.makeText(SPUtilActivity.this, "ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" + s4,
 					Toast.LENGTH_SHORT).show();
 			return;
 		}

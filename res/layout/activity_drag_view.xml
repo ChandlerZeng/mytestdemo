@@ -10,45 +10,93 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/light_pink"
-        android:orientation="vertical" >
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <SeekBar
+                android:id="@+id/test_seekbar1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:layout_weight="1"
+                android:max="2050" />
+
+            <TextView
+                android:id="@+id/test_seekbar1_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:background="@color/blue"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <SeekBar
+                android:id="@+id/test_seekbar2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:layout_weight="1"
+                android:max="1107" />
+
+            <TextView
+                android:id="@+id/test_seekbar2_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:background="@color/blue"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <SeekBar
+            android:id="@+id/test_seekbar3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp" />
 
         <TextView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:background="@color/greyline"
-            android:gravity="center"
-            android:text="I will be back to origin position !" />
-
-        <TextView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:layout_margin="10dp"
-            android:background="#44ff0000"
-            android:gravity="center"
-            android:text="I can be dragged !" />
-
-        <TextView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="10dp"
             android:background="@color/blue"
             android:gravity="center"
             android:text="use edge tracker to drag me !"
             android:textColor="@color/white" />
-        
-          <TextView
+
+        <TextView
             android:id="@+id/drag_tv"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
             android:layout_gravity="center"
+            android:layout_weight="1"
             android:background="@color/greyline"
             android:gravity="center"
             android:text="bottom view, drag me to see difference please !"
             android:textColor="@color/white" />
+        
+        <TextView
+            android:id="@+id/txt_drag_shortcut"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/blue"
+            android:padding="15dp"
+            android:text="拖我试试" />
+
     </LinearLayout>
 
 </com.example.mytestdemo.widget.DragHelperView>

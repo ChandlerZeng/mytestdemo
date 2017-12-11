@@ -247,6 +247,88 @@
                 android:text="Drag" />
 
         </LinearLayout>
+        
+         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btn_seekbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Seekbar" />
+            <Button
+                android:id="@+id/btn_handler"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Handler" />
+            <Button
+                android:id="@+id/btn_scroll_click"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ScrollC" />
+
+            <Button
+                android:id="@+id/btn_aidl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Aidl" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btn_record"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Record" />
+
+            <Button
+                android:id="@+id/btn_home_lock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HomeLock" />
+
+            <Button
+                android:id="@+id/btn_audio_manager"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Audio" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Login" />
+            <Button
+                android:id="@+id/btn_nav"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Navi" />
+
+            <Button
+                android:id="@+id/btn_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Item" />
+
+            <Button
+                android:id="@+id/btn_fullscreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="fulls" />
+
+        </LinearLayout>
     </LinearLayout>
 
 </ScrollView>

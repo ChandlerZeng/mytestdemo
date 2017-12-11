@@ -1,0 +1,61 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/btn_def_vol_plus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Default_Volume Plus" />
+
+    <Button
+        android:id="@+id/btn_def_vol_minus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Default_Volume Minus" />
+    
+    <Button
+        android:id="@+id/btn_music_vol_plus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Music_Volume Plus" />
+    
+    <Button
+        android:id="@+id/btn_music_vol_minus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Music_Volume Minus" />
+    
+    <Button
+        android:id="@+id/btn_voice_call_vol_plus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Voice_Call_Volume Plus" />
+    
+    <Button
+        android:id="@+id/btn_request_audio_focus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Voice_Call_Volume Minus" />
+    
+    <Button
+        android:id="@+id/btn_voice_call_vol_minus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="requestAudioFocus" />
+    
+    <Button
+        android:id="@+id/btn_request_audio_focus_transient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="requestAudioFocusTransient" />
+    
+    <Button
+        android:id="@+id/btn_abandon_audio_focus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="abandonAudioFocus" />
+
+</LinearLayout>

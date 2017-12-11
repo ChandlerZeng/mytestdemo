@@ -11,6 +11,7 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <!-- 屏幕熄灭 -->
     <uses-permission android:name="android.permission.DEVICE_POWER" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
@@ -31,9 +32,13 @@
     <uses-permission android:name="android.permission.WRITE_CONTACTS" />
     <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <!-- 录音 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 
     <application
-        android:name="com.example.mytestdemo.MyTestApplication"
+        android:name=".MyTestApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
@@ -49,18 +54,14 @@
             android:value="com.app.test.android" />
 
         <activity
-            android:name="com.example.mytestdemo.main.MainTestActivity"
+            android:name=".main.MainTestActivity"
             android:configChanges="screenSize|keyboardHidden|orientation|fontScale|locale|navigation"
             android:label="@string/app_name"
             android:theme="@style/myHoloLightBlueActionBar" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            
         </activity>
 
-        <receiver android:name="com.example.mytestdemo.txz.TXZNaviSettingReceiver" >
+        <receiver android:name=".txz.TXZNaviSettingReceiver" >
             <intent-filter>
                 <action android:name="cn.ritu.rtnavi.select_map_action" />
                 <action android:name="android.intent.action.ACC_ON" />
@@ -72,7 +73,7 @@
                 <action android:name="android.intent.action.ACTION_SHUTDOWN" />
             </intent-filter>
         </receiver>
-        <receiver android:name="com.example.mytestdemo.txz.SyncBlueToothReceiver" >
+        <receiver android:name=".txz.SyncBlueToothReceiver" >
             <intent-filter>
                 <action android:name="txz_sync_btcontacts_action" />
                 <action android:name="bluetooth_disconnected_info_action" />
@@ -80,7 +81,7 @@
                 <action android:name="bluetooth_disconnect_action" />
             </intent-filter>
         </receiver>
-        <receiver android:name="com.example.mytestdemo.fragment.FragmentChangeReceiver" >
+        <receiver android:name=".fragment.FragmentChangeReceiver" >
             <intent-filter>
                 <action android:name="change_to_fragment_one_action" />
             </intent-filter>
@@ -99,92 +100,155 @@
         </service>
 
         <activity
-            android:name="com.example.mytestdemo.activity.ContentProviderActivity"
+            android:name=".activity.ContentProviderActivity"
             android:label="@string/title_activity_content_provider"
             android:theme="@style/myHoloLightBlueActionBar" >
         </activity>
         <activity
-            android:name="com.example.mytestdemo.activity.SPUtilActivity"
+            android:name=".activity.SPUtilActivity"
             android:label="@string/title_activity_sputil"
             android:theme="@style/myHoloLightBlueActionBar" >
         </activity>
         <activity
-            android:name="com.example.mytestdemo.activity.DBUtilActivity"
+            android:name=".activity.DBUtilActivity"
             android:label="@string/title_activity_dbutil"
             android:theme="@style/myHoloLightBlueActionBar" >
         </activity>
         <activity
-            android:name="com.example.mytestdemo.carlife.VideoActivity"
+            android:name=".carlife.VideoActivity"
             android:label="@string/title_activity_video" >
         </activity>
         <activity
-            android:name="com.example.mytestdemo.music.MyMusicActivity"
+            android:name=".music.MyMusicActivity"
             android:label="@string/title_activity_music" >
         </activity>
 
-        <service android:name="com.example.mytestdemo.music.MusicService" >
+        <service android:name=".music.MusicService" >
         </service>
         <service
             android:name="com.ximalaya.ting.android.opensdk.player.service.XmPlayerService"
             android:exported="true"
             android:process=":player" >
         </service>
-        <service android:name="com.example.mytestdemo.service.ServiceDemo" >
+        <service android:name=".service.ServiceDemo" >
+        </service>
+        
+        <service android:name=".service.SubMyService" >
         </service>
 
         <activity
-            android:name="com.example.mytestdemo.service.MyServiceActivity"
+            android:name=".service.MyServiceActivity"
             android:label="@string/title_activity_my_service" >
         </activity>
         <activity
-            android:name="com.example.mytestdemo.activity.RandomIdsActivity"
+            android:name=".activity.RandomIdsActivity"
             android:label="@string/title_activity_random_ids" >
         </activity>
         <activity
-            android:name="com.example.mytestdemo.activity.FileTestActivity"
+            android:name=".activity.FileTestActivity"
             android:label="@string/title_activity_file_test" >
         </activity>
         <activity
-            android:name="com.example.mytestdemo.fragment.FragmentTestActivity"
+            android:name=".fragment.FragmentTestActivity"
             android:configChanges="orientation"
             android:screenOrientation="landscape"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
         </activity>
         <activity
-            android:name="com.example.mytestdemo.activity.AndroidFileSystemTest"
+            android:name=".activity.AndroidFileSystemTest"
             android:label="@string/title_activity_file_system" >
         </activity>
         <activity
-            android:name="com.example.mytestdemo.WindowParamsActivity"
+            android:name=".WindowParamsActivity"
             android:label="@string/title_activity_window_params" >
         </activity>
         <activity
-            android:name="com.example.mytestdemo.FileCopyActivity"
+            android:name=".FileCopyActivity"
             android:label="@string/title_activity_file_copy" >
         </activity>
         <activity
-            android:name="com.example.mytestdemo.DimBarcodeActivity"
+            android:name=".DimBarcodeActivity"
             android:label="@string/title_activity_dim_barcode" >
         </activity>
         <activity
-            android:name="com.example.mytestdemo.CanvasActivity"
+            android:name=".CanvasActivity"
             android:label="@string/title_activity_canvas" >
         </activity>
         <activity
-            android:name="com.example.mytestdemo.ScrollPositionActivity"
+            android:name=".ScrollPositionActivity"
             android:label="@string/title_activity_scroll_position" >
         </activity>
         <activity
-            android:name="com.example.mytestdemo.CustomWidgetActivity"
+            android:name=".CustomWidgetActivity"
             android:label="@string/title_activity_custom_widget" >
         </activity>
         <activity
-            android:name="com.example.mytestdemo.SwipeListViewActivity"
+            android:name=".SwipeListViewActivity"
             android:label="@string/title_activity_swipe_list_view" >
         </activity>
         <activity
-            android:name="com.example.mytestdemo.DragViewActivity"
+            android:name=".DragViewActivity"
             android:label="@string/title_activity_drag_view" >
+        </activity>
+        <activity
+            android:name=".SeekBarTestActivity"
+            android:label="@string/title_activity_seek_bar_test" >
+        </activity>
+        <activity
+            android:name=".HandlerActivity"
+            android:label="@string/title_activity_handler" >
+        </activity>
+        <activity
+            android:name=".ScrollClickActivity"
+            android:label="@string/title_activity_scroll_click" >
+        </activity>
+        <activity
+            android:name=".AidlActivity"
+            android:label="@string/title_activity_aidl" >
+        </activity>
+        <activity
+            android:name=".RecordTestActivity"
+            android:label="@string/title_activity_record_test" >
+        </activity>
+        <activity
+            android:name=".activity.FullscreenActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_fullscreen"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
+        <activity
+            android:name=".activity.LoginActivity"
+            android:label="@string/title_activity_login"
+            android:windowSoftInputMode="adjustResize|stateVisible" >
+        </activity>
+        <activity
+            android:name=".activity.ItemListActivity"
+            android:label="@string/title_item_list" >
+        </activity>
+        <activity
+            android:name=".activity.ItemDetailActivity"
+            android:label="@string/title_item_detail"
+            android:parentActivityName=".activity.ItemListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.mytestdemo.activity.ItemListActivity" />
+        </activity>
+        <activity
+            android:name=".HomeLockActivity"
+            android:label="@string/title_activity_home_lock" >
+        </activity>
+        <activity
+            android:name=".AudioManagerTestActivity"
+            android:label="@string/title_activity_audio_manager_test" >
+        </activity>
+        <activity
+            android:name=".MySdkActivity"
+            android:label="@string/title_activity_my_sdk" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

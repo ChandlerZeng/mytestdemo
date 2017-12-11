@@ -9,5 +9,9 @@
 			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="MyTestDemo/libs/armeabi-v7a"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="E:/3rdpartylibs/android-support-v7-appcompat.jar"/>
+	<classpathentry kind="con" path="org.eclipse.andmore.ANDROID_FRAMEWORK"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.andmore.LIBRARIES"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.andmore.DEPENDENCIES"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

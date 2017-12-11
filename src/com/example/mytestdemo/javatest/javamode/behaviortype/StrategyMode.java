@@ -1,12 +1,12 @@
-package com.example.mytestdemo.javatest.javamode.behaviortype;
+﻿package com.example.mytestdemo.javatest.javamode.behaviortype;
 /**
  * @author Zengcq
- * @date 2016��12��14��
+ * @date 2016年12月14日
  * @version 1.0
  * @description
- * ����ģʽ������һϵ���㷨������ÿ���㷨��װ������ʹ���ǿ����໥�滻�����㷨�ı仯����Ӱ�쵽ʹ���㷨�Ŀͻ���
- * ��Ҫ���һ���ӿڣ�Ϊһϵ��ʵ�����ṩͳһ�ķ�����
- * ���ʵ����ʵ�ָýӿڣ����һ�������ࣨ���п��ޣ����ڸ����ࣩ���ṩ������������ϵͼ���£�
+ * 策略模式定义了一系列算法，并将每个算法封装起来，使他们可以相互替换，且算法的变化不会影响到使用算法的客户。
+ * 需要设计一个接口，为一系列实现类提供统一的方法，
+ * 多个实现类实现该接口，设计一个抽象类（可有可无，属于辅助类），提供辅助函数，关系图如下：
  */
 public class StrategyMode {
 
